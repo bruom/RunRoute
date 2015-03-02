@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DetailsViewController.h
 //  RunRoute
 //
 //  Created by Bruno Omella Mainieri on 3/2/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DetailsViewController : UIViewController
 
 @end
-
