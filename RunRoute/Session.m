@@ -25,8 +25,8 @@
 }
 
 -(NSTimeInterval)calcTime{
-    NSDate *start = [[points firstObject]date];
-    NSDate *end = [[points lastObject]date];
+    NSDate *start = [[points firstObject]timestamp];
+    NSDate *end = [[points lastObject]timestamp];
     NSTimeInterval aux = [end timeIntervalSinceDate:start];
     time = aux;
     return aux;

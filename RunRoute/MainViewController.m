@@ -93,6 +93,11 @@
     [locationManager stopUpdatingLocation];
     
     // Grava os dados da sessão
+    currentSession.points = points;
+    [currentSession calcDist];
+    //[currentSession calcTime];
+    NSLog(@"Distancia: %f", [currentSession calcDist]);
+    NSLog(@"Tempo: %f", [currentSession calcTime]);
     
     
     // Esvazia os objetos
