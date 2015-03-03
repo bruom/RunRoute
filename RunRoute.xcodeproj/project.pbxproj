@@ -20,6 +20,7 @@
 		151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07841AA4CC4D007E66CD /* DetailsViewController.m */; };
 		151A07881AA4CC5F007E66CD /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07871AA4CC5F007E66CD /* AboutViewController.m */; };
 		151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */; };
+		152FCC641AA61DBF00E540EB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FCC631AA61DBF00E540EB /* Session.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		151A07871AA4CC5F007E66CD /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		151A07891AA4CE7A007E66CD /* RouteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteTableViewCell.h; sourceTree = "<group>"; };
 		151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTableViewCell.m; sourceTree = "<group>"; };
+		152FCC621AA61DBF00E540EB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		152FCC631AA61DBF00E540EB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */,
 				151A07801AA4CC2F007E66CD /* RoutesTableViewController.h */,
 				151A07811AA4CC2F007E66CD /* RoutesTableViewController.m */,
+				152FCC621AA61DBF00E540EB /* Session.h */,
+				152FCC631AA61DBF00E540EB /* Session.m */,
 				151A075D1AA4CAAE007E66CD /* Main.storyboard */,
 				151A07601AA4CAAE007E66CD /* Images.xcassets */,
 				151A07621AA4CAAE007E66CD /* LaunchScreen.xib */,
@@ -247,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152FCC641AA61DBF00E540EB /* Session.m in Sources */,
 				151A07881AA4CC5F007E66CD /* AboutViewController.m in Sources */,
 				151A07591AA4CAAE007E66CD /* AppDelegate.m in Sources */,
 				151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */,
@@ -444,6 +450,7 @@
 				151A07751AA4CAAE007E66CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		151A07761AA4CAAE007E66CD /* Build configuration list for PBXNativeTarget "RunRouteTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +459,7 @@
 				151A07781AA4CAAE007E66CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
