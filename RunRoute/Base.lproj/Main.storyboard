@@ -190,6 +190,9 @@
                                 <exclude reference="mL3-nl-DZf"/>
                                 <exclude reference="yam-Mf-3nr"/>
                                 <exclude reference="zDg-5p-zae"/>
+                                <exclude reference="4W6-rr-70j"/>
+                                <exclude reference="Okb-TC-eyZ"/>
+                                <exclude reference="UZB-h2-b4a"/>
                                 <exclude reference="Jlx-56-sUN"/>
                                 <exclude reference="7jU-8j-zMY"/>
                                 <exclude reference="Mbz-uu-pY6"/>
@@ -197,9 +200,6 @@
                                 <exclude reference="zRt-Te-ucl"/>
                                 <exclude reference="8TE-Kc-t3b"/>
                                 <exclude reference="JTT-hc-bF0"/>
-                                <exclude reference="4W6-rr-70j"/>
-                                <exclude reference="Okb-TC-eyZ"/>
-                                <exclude reference="UZB-h2-b4a"/>
                                 <exclude reference="vkq-G0-yK4"/>
                             </mask>
                         </variation>
@@ -210,6 +210,9 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="Okb-TC-eyZ"/>
+                                <include reference="UZB-h2-b4a"/>
+                                <exclude reference="Ybo-SL-Abp"/>
                                 <exclude reference="GnV-lm-qaz"/>
                                 <exclude reference="Jlx-56-sUN"/>
                                 <exclude reference="YrJ-Ve-o6s"/>
@@ -217,9 +220,6 @@
                                 <include reference="kBG-oX-I3j"/>
                                 <include reference="8TE-Kc-t3b"/>
                                 <include reference="JTT-hc-bF0"/>
-                                <include reference="Okb-TC-eyZ"/>
-                                <include reference="UZB-h2-b4a"/>
-                                <exclude reference="Ybo-SL-Abp"/>
                                 <exclude reference="rzf-1J-ZZY"/>
                                 <include reference="vkq-G0-yK4"/>
                             </mask>
@@ -272,7 +272,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sobre" id="LCK-RN-9d6"/>
+                    <tabBarItem key="tabBarItem" title="Sobre" image="IniciarIcon" id="LCK-RN-9d6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjF-oz-fIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,7 +300,7 @@
                             <outlet property="delegate" destination="MTJ-nf-IJz" id="Tpk-SR-W2n"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Histórico" id="Y1O-hU-Fat"/>
+                    <tabBarItem key="tabBarItem" title="Histórico" image="IniciarIcon" id="Y1O-hU-Fat"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZA-fg-ZHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
