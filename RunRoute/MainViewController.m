@@ -14,7 +14,7 @@
 
 @implementation MainViewController
 
-@synthesize map, points, locationManager, currentSession, lastLine;
+@synthesize map, points, locationManager, currentSession, lastLine, dss, timer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +23,8 @@
     
     points = [[NSMutableArray alloc] init];
     locationManager = [[CLLocationManager alloc] init];
+    dss = [DataSourceSingleton instance];
+    timer = [[Timer alloc]init];
     
     // Seta a precisão da informção
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -85,8 +87,11 @@
     
     currentSession = [[Session alloc] init];
     
+    [timer startTimer];
+    
     _stopButtonOutlet.hidden = NO;
     _startButtonOutlet.hidden = YES;
+
 }
 
 - (IBAction)stopButton:(id)sender {
@@ -95,10 +100,11 @@
     // Grava os dados da sessão
     currentSession.points = points;
     [currentSession calcDist];
-    //[currentSession calcTime];
+    [currentSession calcTime];
     NSLog(@"Distancia: %f", [currentSession calcDist]);
     NSLog(@"Tempo: %f", [currentSession calcTime]);
     
+    [dss addSession:currentSession];
     
     // Esvazia os objetos
     currentSession = nil;
@@ -106,12 +112,12 @@
     // Recria o pontos
     points = [[NSMutableArray alloc] init];
     
+    [timer stopTimer];
+    
     _stopButtonOutlet.hidden = YES;
     _startButtonOutlet.hidden = NO;
 }
 
-- (IBAction)typeExercise:(id)sender {
-}
 
 #pragma mark - PolyLine
 

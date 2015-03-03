@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Session.h"
 #import "DataSourceSingleton.h"
+#import "Timer.h"
 
 @interface MainViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 
@@ -21,6 +22,8 @@
 @property NSMutableArray* points;
 @property (weak, nonatomic) IBOutlet UIButton *startButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *stopButtonOutlet;
+@property DataSourceSingleton *dss;
+@property Timer *timer;
 
 - (IBAction)startButton:(id)sender;
 - (IBAction)stopButton:(id)sender;

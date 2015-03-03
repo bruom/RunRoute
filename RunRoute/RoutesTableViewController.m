@@ -24,6 +24,8 @@ NSArray *sessions;
     DataSourceSingleton *dss = [DataSourceSingleton instance];
     
     sessions = dss.sessions;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0, 0.0f, 0.0);
 }
 
 - (void)didReceiveMemoryWarning {
