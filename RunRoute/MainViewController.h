@@ -19,6 +19,8 @@
 @property Session *currentSession;
 @property MKPolyline *lastLine;
 @property NSMutableArray* points;
+@property (weak, nonatomic) IBOutlet UIButton *startButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *stopButtonOutlet;
 
 - (IBAction)startButton:(id)sender;
 - (IBAction)stopButton:(id)sender;

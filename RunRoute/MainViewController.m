@@ -36,10 +36,11 @@
     map.showsUserLocation = YES;
     
     // Centraliza na localização do usuário, mas nao o segue
-    map.userTrackingMode = YES;
-    map.userTrackingMode = NO;
+    [locationManager startUpdatingLocation];
     
     // Do any additional setup after loading the view.
+    _stopButtonOutlet.hidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,8 +58,24 @@
 */
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    
+    if (nil == currentSession) {
+        CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
+        
+        //Determinar região com as coordenadas de localização atual e os limites N/S e L/O no zoom em metros
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
+        
+        //Mudar a região atual para visualização de forma animada
+        [map setRegion:region animated:YES ];
+        
+        [locationManager stopUpdatingLocation];
+    }
+    else {
+    
     [points addObject:[locations lastObject]];
+    
     [self drawRoute: points];
+    }
 }
 
 
@@ -68,6 +85,8 @@
     
     currentSession = [[Session alloc] init];
     
+    _stopButtonOutlet.hidden = NO;
+    _startButtonOutlet.hidden = YES;
 }
 
 - (IBAction)stopButton:(id)sender {
@@ -76,22 +95,26 @@
     // Grava os dados da sessão
     
     
-    // Esvazia o objeto
+    // Esvazia os objetos
     currentSession = nil;
+    
+    // Recria o pontos
+    points = [[NSMutableArray alloc] init];
+    
+    _stopButtonOutlet.hidden = YES;
+    _startButtonOutlet.hidden = NO;
 }
 
 - (IBAction)typeExercise:(id)sender {
 }
-
 
 #pragma mark - PolyLine
 
 -(void)drawRoute:(NSMutableArray*)pontos{
     
     // Para evitar de criar infinitas linhas e sobrecarregar a memoria
-    if(nil!=lastLine){
+    if(nil!=lastLine)
         [map removeOverlay:lastLine];
-    }
     CLLocationCoordinate2D coords[points.count];
     for(int i=0; i< points.count; i++){
         CLLocation *local = [points objectAtIndex:i];
@@ -104,7 +127,6 @@
     [map addOverlay:polyline];
 }
 
-
 #pragma mark - MKMapViewDelegate
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
@@ -113,14 +135,12 @@
     {
         MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
         
-        
         // É ESSE QUE DEFINE A COR
         renderer.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:0.7];
         renderer.lineWidth   = 5;
         
         return renderer;
     }
-    
     return nil;
 }
 @end
