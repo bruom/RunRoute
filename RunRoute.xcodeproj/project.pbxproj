@@ -21,6 +21,7 @@
 		151A07881AA4CC5F007E66CD /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07871AA4CC5F007E66CD /* AboutViewController.m */; };
 		151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */; };
 		152FCC641AA61DBF00E540EB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FCC631AA61DBF00E540EB /* Session.m */; };
+		15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTableViewCell.m; sourceTree = "<group>"; };
 		152FCC621AA61DBF00E540EB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		152FCC631AA61DBF00E540EB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		15998DC81AA6242100DE2DDA /* DataSourceSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceSingleton.h; sourceTree = "<group>"; };
+		15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceSingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				151A07581AA4CAAE007E66CD /* AppDelegate.m */,
 				151A07861AA4CC5F007E66CD /* AboutViewController.h */,
 				151A07871AA4CC5F007E66CD /* AboutViewController.m */,
+				15998DC81AA6242100DE2DDA /* DataSourceSingleton.h */,
+				15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */,
 				151A07831AA4CC4D007E66CD /* DetailsViewController.h */,
 				151A07841AA4CC4D007E66CD /* DetailsViewController.m */,
 				151A077D1AA4CC05007E66CD /* MainViewController.h */,
@@ -255,6 +260,7 @@
 				152FCC641AA61DBF00E540EB /* Session.m in Sources */,
 				151A07881AA4CC5F007E66CD /* AboutViewController.m in Sources */,
 				151A07591AA4CAAE007E66CD /* AppDelegate.m in Sources */,
+				15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */,
 				151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */,
 				151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */,
 				151A077F1AA4CC05007E66CD /* MainViewController.m in Sources */,
