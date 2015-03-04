@@ -36,4 +36,11 @@
     return [self calcDist]/[self calcTime]*3.6;
 }
 
+-(NSString*) startDate{
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"dd-MM-yyyy"];
+    
+    return [df stringFromDate:[[points firstObject]timestamp]];
+}
+
 @end

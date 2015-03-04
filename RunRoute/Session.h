@@ -22,4 +22,5 @@
 
 -(float)calcSpeed;
 
+-(NSString*) startDate;
 @end
