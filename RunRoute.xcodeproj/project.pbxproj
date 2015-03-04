@@ -22,7 +22,6 @@
 		151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */; };
 		152FCC641AA61DBF00E540EB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FCC631AA61DBF00E540EB /* Session.m */; };
 		15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */; };
-		4D4B887C1AA64EA500B31FDC /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B887B1AA64EA500B31FDC /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +62,6 @@
 		152FCC631AA61DBF00E540EB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		15998DC81AA6242100DE2DDA /* DataSourceSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceSingleton.h; sourceTree = "<group>"; };
 		15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceSingleton.m; sourceTree = "<group>"; };
-		4D4B887A1AA64EA500B31FDC /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = ../Timer.h; sourceTree = "<group>"; };
-		4D4B887B1AA64EA500B31FDC /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Timer.m; path = ../Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +123,6 @@
 				151A07811AA4CC2F007E66CD /* RoutesTableViewController.m */,
 				152FCC621AA61DBF00E540EB /* Session.h */,
 				152FCC631AA61DBF00E540EB /* Session.m */,
-				4D4B887A1AA64EA500B31FDC /* Timer.h */,
-				4D4B887B1AA64EA500B31FDC /* Timer.m */,
 				151A075D1AA4CAAE007E66CD /* Main.storyboard */,
 				151A07601AA4CAAE007E66CD /* Images.xcassets */,
 				151A07621AA4CAAE007E66CD /* LaunchScreen.xib */,
@@ -267,7 +262,6 @@
 				151A07591AA4CAAE007E66CD /* AppDelegate.m in Sources */,
 				15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */,
 				151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */,
-				4D4B887C1AA64EA500B31FDC /* Timer.m in Sources */,
 				151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */,
 				151A077F1AA4CC05007E66CD /* MainViewController.m in Sources */,
 				151A07561AA4CAAE007E66CD /* main.m in Sources */,

@@ -14,7 +14,9 @@
 
 @implementation MainViewController
 
-@synthesize map, points, locationManager, currentSession, lastLine, dss, timer;
+@synthesize map, points, locationManager, currentSession, lastLine, dss, isSession, nsTimer;
+
+//NSDateFormatter *dateFormatter;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +26,10 @@
     points = [[NSMutableArray alloc] init];
     locationManager = [[CLLocationManager alloc] init];
     dss = [DataSourceSingleton instance];
-    timer = [[Timer alloc]init];
+    nsTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showTime) userInfo:nil repeats:YES];
+    //dateFormatter = [[NSDateFormatter alloc]init];
+    //[dateFormatter setDateFormat:@"HH:mm:ss"];
+    isSession = NO;
     
     // Seta a precisão da informção
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -80,14 +85,24 @@
     }
 }
 
+-(void)showTime{
+    if(isSession){
+//        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[NSDate date]timeIntervalSinceDate:[(CLLocation*)[points firstObject]timestamp]]];
+//        _timeDisplay.text = [dateFormatter stringFromDate:date];
+        int seconds = (int)round([[NSDate date]timeIntervalSinceDate:[(CLLocation*)[points firstObject]timestamp]]);
+        NSString *string = [NSString stringWithFormat:@"%02u:%02u:%02u",
+                            seconds / 3600, (seconds / 60) % 60, seconds % 60];
+        _timeDisplay.text = string;
+    }
+}
+
 
 - (IBAction)startButton:(id)sender {
     // Inicia a atualização da localização dentro de uma sessão
     [locationManager startUpdatingLocation];
     
     currentSession = [[Session alloc] init];
-    
-    [timer startTimer];
+    isSession = YES;
     
     _stopButtonOutlet.hidden = NO;
     _startButtonOutlet.hidden = YES;
@@ -112,7 +127,7 @@
     // Recria o pontos
     points = [[NSMutableArray alloc] init];
     
-    [timer stopTimer];
+    isSession = NO;
     
     _stopButtonOutlet.hidden = YES;
     _startButtonOutlet.hidden = NO;

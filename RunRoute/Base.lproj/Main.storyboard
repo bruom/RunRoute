@@ -140,7 +140,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIy-Bi-vy6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIy-Bi-vy6">
                                 <rect key="frame" x="258" y="510" width="86" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="PA7-k2-npA"/>
@@ -330,6 +330,7 @@
                         <outlet property="map" destination="H5O-9H-4Yv" id="v8F-Aj-aom"/>
                         <outlet property="startButtonOutlet" destination="BSG-b9-Tdh" id="YZM-6h-EKI"/>
                         <outlet property="stopButtonOutlet" destination="cOA-Vm-1Xn" id="qnS-3s-weF"/>
+                        <outlet property="timeDisplay" destination="YIy-Bi-vy6" id="wFx-46-Ixl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWl-le-qc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -399,7 +400,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxJ-GJ-9qD">
-                                            <rect key="frame" x="150" y="11.5" width="300" height="20.5"/>
+                                            <rect key="frame" x="150" y="12" width="300" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="304" id="KvG-Pe-OCn"/>
                                                 <constraint firstAttribute="width" constant="300" id="STZ-FZ-GQ2"/>
