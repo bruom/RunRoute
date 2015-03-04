@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *stopButtonOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *timeDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *distDisplay;
 @property DataSourceSingleton *dss;
 @property NSTimer *nsTimer;
 @property BOOL isSession;

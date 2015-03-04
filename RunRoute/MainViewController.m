@@ -17,6 +17,7 @@
 @synthesize map, points, locationManager, currentSession, lastLine, dss, isSession, nsTimer;
 
 //NSDateFormatter *dateFormatter;
+float dist;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +27,7 @@
     points = [[NSMutableArray alloc] init];
     locationManager = [[CLLocationManager alloc] init];
     dss = [DataSourceSingleton instance];
-    nsTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showTime) userInfo:nil repeats:YES];
+    nsTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showInfo) userInfo:nil repeats:YES];
     //dateFormatter = [[NSDateFormatter alloc]init];
     //[dateFormatter setDateFormat:@"HH:mm:ss"];
     isSession = NO;
@@ -79,20 +80,31 @@
     }
     else {
     
-    [points addObject:[locations lastObject]];
-    
-    [self drawRoute: points];
+        [points addObject:[locations lastObject]];
+        int aux = (int)points.count;
+        if(aux>1){
+            dist += [[points objectAtIndex:aux-1]distanceFromLocation:[points objectAtIndex:aux-2]];
+        }
+        [self drawRoute: points];
     }
 }
 
--(void)showTime{
+-(void)showInfo{
     if(isSession){
 //        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[NSDate date]timeIntervalSinceDate:[(CLLocation*)[points firstObject]timestamp]]];
 //        _timeDisplay.text = [dateFormatter stringFromDate:date];
+        
+        
+        
+        //atualiza o timer no tela com o tempo a partir do começo da sessão
         int seconds = (int)round([[NSDate date]timeIntervalSinceDate:[(CLLocation*)[points firstObject]timestamp]]);
-        NSString *string = [NSString stringWithFormat:@"%02u:%02u:%02u",
+        NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u",
                             seconds / 3600, (seconds / 60) % 60, seconds % 60];
-        _timeDisplay.text = string;
+        _timeDisplay.text = timeString;
+        
+        NSString *distString = [NSString stringWithFormat:@"%.2f m",dist];
+        _distDisplay.text = distString;
+        
     }
 }
 
@@ -103,6 +115,7 @@
     
     currentSession = [[Session alloc] init];
     isSession = YES;
+    dist = 0.0;
     
     _stopButtonOutlet.hidden = NO;
     _startButtonOutlet.hidden = YES;

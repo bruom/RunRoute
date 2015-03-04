@@ -327,6 +327,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Exercício" image="IniciarIcon" selectedImage="IniciarIcon" id="PAU-rj-U3N"/>
                     <connections>
+                        <outlet property="distDisplay" destination="vSJ-l9-fNt" id="4IX-48-L2I"/>
                         <outlet property="map" destination="H5O-9H-4Yv" id="v8F-Aj-aom"/>
                         <outlet property="startButtonOutlet" destination="BSG-b9-Tdh" id="YZM-6h-EKI"/>
                         <outlet property="stopButtonOutlet" destination="cOA-Vm-1Xn" id="qnS-3s-weF"/>
