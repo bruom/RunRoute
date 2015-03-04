@@ -27,7 +27,7 @@ float dist;
     points = [[NSMutableArray alloc] init];
     locationManager = [[CLLocationManager alloc] init];
     dss = [DataSourceSingleton instance];
-    nsTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showInfo) userInfo:nil repeats:YES];
+    //nsTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showInfo) userInfo:nil repeats:YES];
     //dateFormatter = [[NSDateFormatter alloc]init];
     //[dateFormatter setDateFormat:@"HH:mm:ss"];
     isSession = NO;
@@ -85,6 +85,7 @@ float dist;
         if(aux>1){
             dist += [[points objectAtIndex:aux-1]distanceFromLocation:[points objectAtIndex:aux-2]];
         }
+        [self showInfo];
         [self drawRoute: points];
     }
 }
@@ -110,6 +111,7 @@ float dist;
 
 
 - (IBAction)startButton:(id)sender {
+    
     // Inicia a atualização da localização dentro de uma sessão
     [locationManager startUpdatingLocation];
     
@@ -123,7 +125,11 @@ float dist;
 }
 
 - (IBAction)stopButton:(id)sender {
+    
+    isSession = NO;
+    
     [locationManager stopUpdatingLocation];
+    
     
     // Grava os dados da sessão
     currentSession.points = points;
@@ -140,7 +146,7 @@ float dist;
     // Recria o pontos
     points = [[NSMutableArray alloc] init];
     
-    isSession = NO;
+
     
     _stopButtonOutlet.hidden = YES;
     _startButtonOutlet.hidden = NO;

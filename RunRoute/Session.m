@@ -17,7 +17,7 @@
         return 0.0;
     }
     float dist = 0.0;
-    for(int i=1;i<points.count-1;i++){
+    for(int i=0;i<points.count-1;i++){
         dist += (float)[[points objectAtIndex:i]distanceFromLocation:[points objectAtIndex:i+1]];
     }
     distance = dist;
