@@ -9,6 +9,7 @@
 #import "RoutesTableViewController.h"
 #import "DataSourceSingleton.h"
 #import "RouteTableViewCell.h"
+#import "DetailsViewController.h"
 
 @interface RoutesTableViewController ()
 
@@ -49,10 +50,15 @@ NSArray *sessions;
     RouteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteCell" forIndexPath:indexPath];
     long row = [indexPath row];
     
-    cell.speed.text = [[NSString alloc] initWithFormat:@"%f",[[sessions objectAtIndex:row] calcSpeed]];
-    cell.timeLabel.text = [[NSString alloc] initWithFormat:@"%f", [[sessions objectAtIndex:row] calcTime]];
-    cell.dateLabel.text = [[NSString alloc] initWithFormat:@"%f", [[sessions objectAtIndex:row]startDate]];
-    cell.distLabel.text = [[NSString alloc] initWithFormat:@"%f", [[sessions objectAtIndex:row] calcDist]];
+    cell.speed.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[[sessions objectAtIndex:row] calcSpeed]];
+    
+    int seconds = (int)round([[sessions objectAtIndex:row] calcTime]);
+    NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u",
+                            seconds / 3600, (seconds / 60) % 60, seconds % 60];
+                              
+    cell.timeLabel.text = timeString;
+    cell.dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [[sessions objectAtIndex:row]startDate]];
+    cell.distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [[sessions objectAtIndex:row] calcDist]];
     return cell;
 }
 
@@ -91,14 +97,25 @@ NSArray *sessions;
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"ShowDetails"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        DetailsViewController *appView = segue.destinationViewController;
+        
+        long row = [indexPath row];
+//        NSString *speed = [[NSString alloc] initWithFormat:@"%.2f km/h",[[sessions objectAtIndex:row] calcSpeed]];
+//        int seconds = (int)round([[sessions objectAtIndex:row] calcTime]);
+//        
+//        NSString *time = [NSString stringWithFormat:@"%02u:%02u:%02u",seconds / 3600, (seconds / 60) % 60, seconds % 60];
+//        NSString *dist = [[NSString alloc] initWithFormat:@"%.2f m", [[sessions objectAtIndex:row] calcDist]];
+//        NSString *date = [[NSString alloc] initWithFormat:@"%@", [[sessions objectAtIndex:row]startDate]];
+//        NSArray *aux = [NSArray arrayWithObjects:speed,time,dist,date,nil];
+        DataSourceSingleton* dss = [DataSourceSingleton instance];
+        appView.session = [dss.sessions objectAtIndex:row];
+    }
 }
-*/
 
 @end

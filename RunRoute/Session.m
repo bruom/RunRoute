@@ -38,7 +38,7 @@
 
 -(NSString*) startDate{
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
-    [df setDateFormat:@"dd-MM-yyyy"];
+    [df setDateFormat:@"dd/MM/yyyy - HH:mm"];
     
     return [df stringFromDate:[[points firstObject]timestamp]];
 }

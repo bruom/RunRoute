@@ -14,8 +14,19 @@
 
 @implementation DetailsViewController
 
+@synthesize session;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _speedLabel.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[session calcSpeed]];
+    
+    int seconds = (int)round([session calcTime]);
+    NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u",
+                            seconds / 3600, (seconds / 60) % 60, seconds % 60];
+    _timeLabel.text = timeString;
+    _dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [session startDate]];
+    _distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [session calcDist]];
     // Do any additional setup after loading the view.
 }
 
