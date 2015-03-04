@@ -50,7 +50,9 @@ NSArray *sessions;
     long row = [indexPath row];
     
     cell.speed.text = [[NSString alloc] initWithFormat:@"%f",[[sessions objectAtIndex:row] calcSpeed]];
-    
+    cell.timeLabel.text = [[NSString alloc] initWithFormat:@"%f", [[sessions objectAtIndex:row] calcTime]];
+//    cell.dateLabel.text = [[NSString alloc] initWithFormat:@"%f", [[sessions objectAtIndex:row]startDate]];
+    cell.distLabel.text = [[NSString alloc] initWithFormat:@"f", [[sessions objectAtIndex:row] calcDist]];
     return cell;
 }
 
