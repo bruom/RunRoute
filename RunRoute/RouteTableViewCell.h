@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RouteTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *speed;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;

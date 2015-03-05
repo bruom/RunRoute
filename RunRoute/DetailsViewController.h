@@ -20,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *distLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *speedLabel;
+- (IBAction)voltarButton:(id)sender;
+
 
 @end

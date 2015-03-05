@@ -188,4 +188,8 @@ float dist;
     }
     return nil;
 }
+
+- (IBAction)typeExercise:(id)sender{
+    
+}
 @end

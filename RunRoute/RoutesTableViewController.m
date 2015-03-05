@@ -50,8 +50,6 @@ NSArray *sessions;
     RouteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteCell" forIndexPath:indexPath];
     long row = [indexPath row];
     
-    cell.speed.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[[sessions objectAtIndex:row] calcSpeed]];
-    
     int seconds = (int)round([[sessions objectAtIndex:row] calcTime]);
     NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u",
                             seconds / 3600, (seconds / 60) % 60, seconds % 60];
