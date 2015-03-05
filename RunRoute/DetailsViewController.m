@@ -14,10 +14,11 @@
 
 @implementation DetailsViewController
 
-@synthesize session;
+@synthesize session, map;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [map setDelegate:self];
     
     _speedLabel.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[session calcSpeed]];
     
@@ -27,6 +28,16 @@
     _timeLabel.text = timeString;
     _dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [session startDate]];
     _distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [session calcDist]];
+    [self drawRoute:session.points];
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[session.points firstObject]coordinate], 250, 250);
+    
+    //Mudar a região atual para visualização de forma animada
+    [map setRegion:region animated:NO ];
+    
+    //[map setScrollEnabled:NO];
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -48,4 +59,39 @@
 - (IBAction)voltarButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - PolyLine
+
+-(void)drawRoute:(NSArray*)points{
+    
+    // Para evitar de criar infinitas linhas e sobrecarregar a memoria
+
+    CLLocationCoordinate2D coords[points.count];
+    for(int i=0; i< points.count; i++){
+        CLLocation *local = [points objectAtIndex:i];
+        CLLocationCoordinate2D coord = local.coordinate;
+        
+        coords[i] = coord;
+    }
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coords count:points.count];
+    [map addOverlay:polyline];
+}
+
+#pragma mark - MKMapViewDelegate
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    if ([overlay isKindOfClass:[MKPolyline class]])
+    {
+        MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+        
+        // É ESSE QUE DEFINE A COR
+        renderer.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:0.7];
+        renderer.lineWidth   = 5;
+        
+        return renderer;
+    }
+    return nil;
+}
+
 @end

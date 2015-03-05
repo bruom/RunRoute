@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Session.h"
 
-@interface DetailsViewController : UIViewController
+@interface DetailsViewController : UIViewController<MKMapViewDelegate>
 
 @property Session* session;
 
