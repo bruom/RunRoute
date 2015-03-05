@@ -57,6 +57,18 @@ NSArray *sessions;
     cell.timeLabel.text = timeString;
     cell.dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [[sessions objectAtIndex:row]startDate]];
     cell.distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [[sessions objectAtIndex:row] calcDist]];
+    
+    NSString *aux = [[sessions objectAtIndex:row] typeExercise];
+    
+    if ([aux isEqualToString:@"Walk"]){
+        NSLog(@"%@", aux);
+        cell.image.image =[UIImage imageNamed: @"walkicon.png"];
+    }
+    if ([aux isEqualToString:@"Run"])
+        cell.image.image =[UIImage imageNamed: @"runicon.png"];
+    if([aux isEqualToString:@"Bike"])
+        cell.image.image =[UIImage imageNamed: @"bikeicon.png"];
+
     return cell;
 }
 

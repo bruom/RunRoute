@@ -19,6 +19,7 @@
 //NSDateFormatter *dateFormatter;
 float dist;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -48,6 +49,7 @@ float dist;
     
     // Do any additional setup after loading the view.
     _stopButtonOutlet.hidden = YES;
+    _auxType = @"Walk";
     
 }
 
@@ -118,10 +120,12 @@ float dist;
     currentSession = [[Session alloc] init];
     isSession = YES;
     dist = 0.0;
+    currentSession.typeExercise = _auxType;
     
     _stopButtonOutlet.hidden = NO;
     _startButtonOutlet.hidden = YES;
-
+    _typeExercise.hidden = YES;
+    NSLog(@"Tipo: %@", currentSession.typeExercise);
 }
 
 - (IBAction)stopButton:(id)sender {
@@ -146,10 +150,9 @@ float dist;
     // Recria o pontos
     points = [[NSMutableArray alloc] init];
     
-
-    
     _stopButtonOutlet.hidden = YES;
     _startButtonOutlet.hidden = NO;
+    _typeExercise.hidden = NO;
 }
 
 
@@ -190,6 +193,19 @@ float dist;
 }
 
 - (IBAction)typeExercise:(id)sender{
-    
+    switch (((UISegmentedControl*) sender).selectedSegmentIndex) {
+        case 0:
+            _auxType = @"Walk";
+            break;
+        case 1:
+            _auxType = @"Run";
+            break;
+        case 2:
+            _auxType = @"Bike";
+            break;
+        default:
+            _auxType = @"Walk";
+            break;
+    }
 }
 @end
