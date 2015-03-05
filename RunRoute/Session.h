@@ -24,4 +24,6 @@
 -(float)calcSpeed;
 
 -(NSString*) startDate;
+
+-(NSString*) startDateWithHour;
 @end

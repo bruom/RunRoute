@@ -26,7 +26,7 @@
     NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u",
                             seconds / 3600, (seconds / 60) % 60, seconds % 60];
     _timeLabel.text = timeString;
-    _dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [session startDate]];
+    _dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [session startDateWithHour]];
     _distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [session calcDist]];
     [self drawRoute:session.points];
     

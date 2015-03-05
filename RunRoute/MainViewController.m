@@ -125,7 +125,7 @@ float dist;
     _stopButtonOutlet.hidden = NO;
     _startButtonOutlet.hidden = YES;
     _typeExercise.hidden = YES;
-    NSLog(@"Tipo: %@", currentSession.typeExercise);
+    map.userTrackingMode = YES;
 }
 
 - (IBAction)stopButton:(id)sender {
