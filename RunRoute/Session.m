@@ -10,7 +10,7 @@
 
 @implementation Session
 
-@synthesize points, distance, time;
+@synthesize points, distance, time, typeExercise;
 
 -(float)calcDist{
     if(nil==points || points.count == 0){

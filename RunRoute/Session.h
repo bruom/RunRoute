@@ -14,6 +14,7 @@
 @property NSArray* points;
 @property float distance;
 @property NSTimeInterval time;
+@property NSString* typeExercise;
 
 
 -(float)calcDist;

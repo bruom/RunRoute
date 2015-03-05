@@ -26,6 +26,8 @@
 @property DataSourceSingleton *dss;
 @property NSTimer *nsTimer;
 @property BOOL isSession;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *typeExercise;
+@property NSString* auxType;
 
 - (IBAction)startButton:(id)sender;
 - (IBAction)stopButton:(id)sender;
