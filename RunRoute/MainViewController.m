@@ -208,4 +208,9 @@ float dist;
             break;
     }
 }
+
+- (IBAction)locationButton:(id)sender {
+    map.userTrackingMode = YES;
+    
+}
 @end

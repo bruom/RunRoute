@@ -32,5 +32,6 @@
 - (IBAction)startButton:(id)sender;
 - (IBAction)stopButton:(id)sender;
 - (IBAction)typeExercise:(id)sender;
+- (IBAction)locationButton:(id)sender;
 
 @end
