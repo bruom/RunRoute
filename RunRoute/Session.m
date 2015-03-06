@@ -49,4 +49,33 @@
     
     return [df stringFromDate:[[points firstObject]timestamp]];
 }
+
+-(float)getMaxSpeed{
+    float aux = 0.0;
+    for(int i=0; i<points.count;i++){
+        if([[points objectAtIndex:i] speed]>aux)
+            aux = (float)[[points objectAtIndex:i] speed];
+    }
+    //NSLog(@"%f",aux);
+    return aux*3.6;
+}
+
+-(float)totalDownSlope{
+    float aux=0.0;
+    float max=0.0;
+    for(int i=1;i<points.count;i++){
+        if([[points objectAtIndex:i] altitude]<=[[points objectAtIndex:i-1] altitude]){
+            aux+=[[points objectAtIndex:i-1] altitude]-[[points objectAtIndex:i] altitude];
+            NSLog(@"%f",aux);
+            if(aux>max)
+                max=aux;
+        }
+        else
+            aux=0.0;
+        
+    }
+    NSLog(@"%f",max);
+    return max;
+}
+
 @end

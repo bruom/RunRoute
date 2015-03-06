@@ -44,6 +44,7 @@
     // Muda o tipo da transição de telas
     self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
+    [session totalDownSlope];
     //[map setScrollEnabled:NO];
     
     

@@ -26,4 +26,8 @@
 -(NSString*) startDate;
 
 -(NSString*) startDateWithHour;
+
+-(float)getMaxSpeed;
+
+-(float)totalDownSlope;
 @end
