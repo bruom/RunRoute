@@ -35,6 +35,15 @@
     //Mudar a região atual para visualização de forma animada
     [map setRegion:region animated:NO ];
     
+    
+    // Reconhecimento do gesto
+    UIScreenEdgePanGestureRecognizer *leftSwipe = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
+    leftSwipe.edges = UIRectEdgeLeft;
+    [self.view addGestureRecognizer:leftSwipe];
+    
+    // Muda o tipo da transição de telas
+    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
     //[map setScrollEnabled:NO];
     
     
@@ -57,6 +66,10 @@
 */
 
 - (IBAction)voltarButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)leftSwipe{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

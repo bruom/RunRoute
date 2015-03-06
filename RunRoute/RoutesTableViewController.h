@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RoutesTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
+- (IBAction)editButton:(id)sender;
 
 @end

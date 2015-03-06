@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1vH-IU-VEj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -279,6 +280,10 @@
                                 <exclude reference="UvJ-MN-I9s"/>
                                 <exclude reference="zkB-K5-VO4"/>
                                 <exclude reference="ul3-wm-NWH"/>
+                                <exclude reference="7jU-8j-zMY"/>
+                                <exclude reference="BEK-HW-CYr"/>
+                                <exclude reference="Mbz-uu-pY6"/>
+                                <exclude reference="exP-h4-tvH"/>
                                 <exclude reference="4bm-ty-Gff"/>
                                 <exclude reference="4hg-Mc-m1o"/>
                                 <exclude reference="6pq-2P-HZM"/>
@@ -286,10 +291,6 @@
                                 <exclude reference="kBG-oX-I3j"/>
                                 <exclude reference="z4f-OS-bxZ"/>
                                 <exclude reference="zRt-Te-ucl"/>
-                                <exclude reference="7jU-8j-zMY"/>
-                                <exclude reference="BEK-HW-CYr"/>
-                                <exclude reference="Mbz-uu-pY6"/>
-                                <exclude reference="exP-h4-tvH"/>
                                 <exclude reference="8TE-Kc-t3b"/>
                                 <exclude reference="JTT-hc-bF0"/>
                                 <exclude reference="uR5-FD-SvK"/>
@@ -314,11 +315,11 @@
                                 <exclude reference="GnV-lm-qaz"/>
                                 <include reference="UvJ-MN-I9s"/>
                                 <include reference="zkB-K5-VO4"/>
+                                <exclude reference="Mbz-uu-pY6"/>
+                                <exclude reference="YrJ-Ve-o6s"/>
                                 <exclude reference="6pq-2P-HZM"/>
                                 <exclude reference="HeZ-rO-6O7"/>
                                 <include reference="z4f-OS-bxZ"/>
-                                <exclude reference="Mbz-uu-pY6"/>
-                                <exclude reference="YrJ-Ve-o6s"/>
                                 <include reference="uR5-FD-SvK"/>
                                 <exclude reference="2rb-fj-e9f"/>
                                 <exclude reference="KMK-F2-GZe"/>
@@ -337,6 +338,9 @@
                                 <exclude reference="Ybo-SL-Abp"/>
                                 <exclude reference="GnV-lm-qaz"/>
                                 <exclude reference="Jlx-56-sUN"/>
+                                <include reference="BEK-HW-CYr"/>
+                                <exclude reference="YrJ-Ve-o6s"/>
+                                <include reference="exP-h4-tvH"/>
                                 <include reference="4bm-ty-Gff"/>
                                 <include reference="4hg-Mc-m1o"/>
                                 <exclude reference="4jN-uk-O4L"/>
@@ -344,9 +348,6 @@
                                 <exclude reference="HeZ-rO-6O7"/>
                                 <exclude reference="Xaa-ZR-Qgc"/>
                                 <include reference="kBG-oX-I3j"/>
-                                <include reference="BEK-HW-CYr"/>
-                                <exclude reference="YrJ-Ve-o6s"/>
-                                <include reference="exP-h4-tvH"/>
                                 <include reference="8TE-Kc-t3b"/>
                                 <include reference="JTT-hc-bF0"/>
                                 <exclude reference="KMK-F2-GZe"/>
@@ -403,32 +404,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Para utilizar o aplicativo, clique ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvc-1I-nSt">
-                                <rect key="frame" x="16" y="28" width="257" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="runroute" translatesAutoresizingMaskIntoConstraints="NO" id="dV4-JL-pol">
+                                <rect key="frame" x="150" y="40" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dV4-JL-pol" secondAttribute="height" multiplier="1:1" id="K09-9i-UfH"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="r1e-Oh-mPV">
+                                <rect key="frame" x="46" y="370" width="508" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bGu-kQ-BVD"/>
+                                </constraints>
+                                <string key="text">Este aplicativo é dedicado às pessoas que gostam de correr, andar de bicicleta ou dar uma caminhada e que desejam ter acesso a informações como percurso e distância percorrida, tempo gasto no percurso e velocidade média para que possam comparar e melhorar seus índices a partir da data e do tipo de exercício escolhido.Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dV4-JL-pol" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="20" id="2U6-QB-hyu"/>
+                            <constraint firstItem="dV4-JL-pol" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="20" id="9qo-y9-6qO"/>
+                            <constraint firstAttribute="centerX" secondItem="r1e-Oh-mPV" secondAttribute="centerX" id="Hom-t2-uUn"/>
+                            <constraint firstAttribute="centerX" secondItem="dV4-JL-pol" secondAttribute="centerX" id="Iz3-yh-hfS"/>
+                            <constraint firstItem="dV4-JL-pol" firstAttribute="leading" secondItem="MSU-4e-V1Z" secondAttribute="leadingMargin" constant="30" id="XaA-iN-ma9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r1e-Oh-mPV" secondAttribute="trailing" constant="30" id="aL9-oH-FXp"/>
+                            <constraint firstItem="r1e-Oh-mPV" firstAttribute="top" secondItem="dV4-JL-pol" secondAttribute="bottom" constant="20" id="c6I-Ex-2xf"/>
+                            <constraint firstAttribute="centerX" secondItem="dV4-JL-pol" secondAttribute="centerX" id="eQZ-T9-WSf"/>
+                            <constraint firstItem="r1e-Oh-mPV" firstAttribute="leading" secondItem="MSU-4e-V1Z" secondAttribute="leadingMargin" constant="30" id="ujH-C7-26K"/>
+                            <constraint firstItem="r1e-Oh-mPV" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="350" id="urq-Mi-OHL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2U6-QB-hyu"/>
+                                <exclude reference="eQZ-T9-WSf"/>
+                                <exclude reference="c6I-Ex-2xf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sobre" image="iconinfo" id="LCK-RN-9d6">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textAbout" destination="r1e-Oh-mPV" id="sjE-D4-0fe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjF-oz-fIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-811" y="1473"/>
+            <point key="canvasLocation" x="-811" y="1465"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="jnh-Q9-Aah">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZA-fg-ZHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="MTJ-nf-IJz" customClass="RoutesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" id="FKV-Aa-LD1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="mrP-Qi-fqP">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Histórico de Exercícios" id="6Bm-Qb-AHd">
+                                    <barButtonItem key="rightBarButtonItem" title="Editar" id="xBW-FX-CUe">
+                                        <connections>
+                                            <action selector="editButton:" destination="MTJ-nf-IJz" id="sWD-1I-bBJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RouteCell" rowHeight="110" id="y7L-Dg-hVc" customClass="RouteTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -530,11 +577,14 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Histórico" image="icontable" id="Y1O-hU-Fat"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="xBW-FX-CUe" id="2mK-x7-5Lo"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eZA-fg-ZHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-49" y="1026"/>
+            <point key="canvasLocation" x="-50" y="1118"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="Wry-6h-4fB">
@@ -678,7 +728,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsf-Fn-XgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="1037"/>
+            <point key="canvasLocation" x="639" y="1118"/>
         </scene>
     </scenes>
     <resources>
@@ -686,6 +736,7 @@
         <image name="iconrun" width="32" height="32"/>
         <image name="icontable" width="32" height="32"/>
         <image name="play" width="1650" height="1650"/>
+        <image name="runroute" width="1024" height="1024"/>
         <image name="stop" width="1650" height="1650"/>
         <image name="target" width="64" height="64"/>
     </resources>

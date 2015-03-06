@@ -150,6 +150,9 @@ float dist;
     // Recria o pontos
     points = [[NSMutableArray alloc] init];
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Exercício Concluído" message:@"Exercício salvo no seu histórico 😁"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    
     _stopButtonOutlet.hidden = YES;
     _startButtonOutlet.hidden = NO;
     _typeExercise.hidden = NO;

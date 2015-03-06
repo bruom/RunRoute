@@ -17,7 +17,7 @@
 
 @implementation RoutesTableViewController
 
-NSArray *sessions;
+NSMutableArray *sessions;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,17 +81,14 @@ NSArray *sessions;
 }
 */
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        [sessions removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -126,6 +123,18 @@ NSArray *sessions;
         DataSourceSingleton* dss = [DataSourceSingleton instance];
         appView.session = [dss.sessions objectAtIndex:row];
     }
+}
+
+- (IBAction)editButton:(id)sender {
+    if (self.editing == YES) {
+        self.editing = NO;
+        _editButton.title = @"Editar";
+    }
+    else{
+        self.editing = YES;
+        _editButton.title = @"Ok";
+    }
+    
 }
 
 @end
