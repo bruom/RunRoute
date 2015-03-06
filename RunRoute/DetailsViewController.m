@@ -28,6 +28,12 @@
     _timeLabel.text = timeString;
     _dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [session startDateWithHour]];
     _distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [session calcDist]];
+    _maxSpeedDisplay.text = [[NSString alloc] initWithFormat:@"%f km/h",[session getMaxSpeed]];
+    _slope.text = [[NSString alloc] initWithFormat:@"%f m", [session totalDownSlope]];
+    
+    _scroll.scrollEnabled = YES;
+    _scroll.contentSize = CGSizeMake(600, 600);
+                             
     [self drawRoute:session.points];
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[session.points firstObject]coordinate], 250, 250);

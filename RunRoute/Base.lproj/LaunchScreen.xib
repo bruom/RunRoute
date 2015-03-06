@@ -30,7 +30,7 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.015686274509803921" green="0.21568627450980393" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.047058823529411764" green="0.17647058823529413" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
@@ -47,6 +47,6 @@
         </view>
     </objects>
     <resources>
-        <image name="runroute" width="1024" height="1024"/>
+        <image name="runroute" width="512" height="512"/>
     </resources>
 </document>
