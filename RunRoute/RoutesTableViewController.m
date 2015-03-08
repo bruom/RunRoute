@@ -2,8 +2,8 @@
 //  RoutesTableViewController.m
 //  RunRoute
 //
-//  Created by Bruno Omella Mainieri on 3/2/15.
-//  Copyright (c) 2015 Bruno Omella. All rights reserved.
+//  Created by TheBestGroup on 3/2/15.
+//  Copyright (c) 2015 TheBestGroup. All rights reserved.
 //
 
 #import "RoutesTableViewController.h"
@@ -25,8 +25,6 @@ NSMutableArray *sessions;
     DataSourceSingleton *dss = [DataSourceSingleton instance];
     
     sessions = dss.sessions;
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0, 0.0f, 0.0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,9 +33,36 @@ NSMutableArray *sessions;
 
 #pragma mark - Table view data source
 
+// Retorna o numero de seçoes da Table View
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
+    // Criando a label que exibe a mensagem
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height)];
+
+    // Verifica se a tableview está vazia
+    if (sessions.count == 0) {
+        //Se estiver vazia, exibe uma mensagem de lista vazia
+
+        // Mensagem de tableview vazia
+        messageLabel.text = @"Sem Exercícios Registrados...";
+        // Tipo de alinhamento da label, centralizado
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        // Tamanho do texto da label
+        messageLabel.font = [UIFont italicSystemFontOfSize:22];
+        // Cor da label
+        messageLabel.textColor = [UIColor whiteColor];
+
+        //Coloca a label no fundo da tableview
+        self.tableView.backgroundView = messageLabel;
+        
+        return 1;
+    }
+    else {
+        // Se não estiver vazia apaga a mensagem
+        messageLabel.text = @"";
+        self.tableView.backgroundView = messageLabel;
+
+        return 1;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -126,6 +151,7 @@ NSMutableArray *sessions;
 }
 
 - (IBAction)editButton:(id)sender {
+    // Transforma o botão da navigation bar
     if (self.editing == YES) {
         self.editing = NO;
         _editButton.title = @"Editar";
@@ -134,7 +160,6 @@ NSMutableArray *sessions;
         self.editing = YES;
         _editButton.title = @"Ok";
     }
-    
 }
 
 @end

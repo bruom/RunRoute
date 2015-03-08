@@ -284,7 +284,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.066666666666666666" green="0.14117647058823529" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bHs-y3-Ww5" firstAttribute="top" secondItem="cOA-Vm-1Xn" secondAttribute="bottom" constant="10" id="4bm-ty-Gff"/>
                             <constraint firstItem="bHs-y3-Ww5" firstAttribute="top" secondItem="cOA-Vm-1Xn" secondAttribute="bottom" constant="10" id="6pq-2P-HZM">
@@ -441,14 +441,14 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="r1e-Oh-mPV">
                                 <rect key="frame" x="46" y="370" width="508" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.73725490196078436" green="0.76470588235294112" blue="0.7686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="bGu-kQ-BVD">
                                         <variation key="heightClass=regular-widthClass=compact" constant="330"/>
                                     </constraint>
                                 </constraints>
                                 <string key="text">Este aplicativo é dedicado às pessoas que gostam de correr, andar de bicicleta ou dar uma caminhada e que desejam ter acesso a informações como percurso e distância percorrida, tempo gasto no percurso e velocidade média para que possam comparar e melhorar seus índices a partir da data e do tipo de exercício escolhido.
-Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </string>
+Desenvolvido pelo TheBestGroup: TheBestGroup, João Marcos, Patricia Abreu. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=compact">
@@ -462,17 +462,33 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                     </mask>
                                 </variation>
                             </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-Q7-cp0">
+                                <rect key="frame" x="-4" y="0.0" width="608" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gnW-5H-uQE">
+                                        <variation key="heightClass=compact" constant="50"/>
+                                    </constraint>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Sobre" id="cTU-MI-ab4"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.066666666666666666" green="0.14117647058823529" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dV4-JL-pol" firstAttribute="leading" secondItem="MSU-4e-V1Z" secondAttribute="leadingMargin" constant="15" id="1QB-pp-jR0"/>
                             <constraint firstItem="dV4-JL-pol" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="20" id="2U6-QB-hyu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r1e-Oh-mPV" secondAttribute="trailing" constant="15" id="4YG-Jh-oJk"/>
                             <constraint firstItem="67b-By-JKN" firstAttribute="top" secondItem="r1e-Oh-mPV" secondAttribute="bottom" constant="20" id="6Bq-QJ-3iL"/>
-                            <constraint firstItem="dV4-JL-pol" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="20" id="9qo-y9-6qO"/>
+                            <constraint firstItem="dV4-JL-pol" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="20" id="9qo-y9-6qO">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="r1e-Oh-mPV" secondAttribute="centerX" id="Hom-t2-uUn"/>
                             <constraint firstAttribute="centerX" secondItem="dV4-JL-pol" secondAttribute="centerX" id="Iz3-yh-hfS"/>
-                            <constraint firstItem="r1e-Oh-mPV" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="30" id="WMo-bS-s3B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d1h-Q7-cp0" secondAttribute="trailing" constant="-20" id="QHS-7C-ZfJ"/>
+                            <constraint firstItem="r1e-Oh-mPV" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="30" id="WMo-bS-s3B">
+                                <variation key="heightClass=compact" constant="60"/>
+                            </constraint>
                             <constraint firstItem="dV4-JL-pol" firstAttribute="leading" secondItem="MSU-4e-V1Z" secondAttribute="leadingMargin" constant="30" id="XaA-iN-ma9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r1e-Oh-mPV" secondAttribute="trailing" constant="30" id="aL9-oH-FXp"/>
                             <constraint firstItem="r1e-Oh-mPV" firstAttribute="centerY" secondItem="dV4-JL-pol" secondAttribute="centerY" id="aae-if-Dz7"/>
@@ -480,7 +496,11 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                             <constraint firstAttribute="centerX" secondItem="dV4-JL-pol" secondAttribute="centerX" id="eQZ-T9-WSf"/>
                             <constraint firstAttribute="centerY" secondItem="dV4-JL-pol" secondAttribute="centerY" id="ih9-um-Kja"/>
                             <constraint firstItem="r1e-Oh-mPV" firstAttribute="leading" secondItem="dV4-JL-pol" secondAttribute="trailing" constant="10" id="kWY-Cd-1QA"/>
-                            <constraint firstItem="dV4-JL-pol" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="30" id="r1F-pA-BFl"/>
+                            <constraint firstItem="d1h-Q7-cp0" firstAttribute="top" secondItem="MSU-4e-V1Z" secondAttribute="topMargin" id="kyt-Y9-Cfn"/>
+                            <constraint firstItem="d1h-Q7-cp0" firstAttribute="leading" secondItem="MSU-4e-V1Z" secondAttribute="leadingMargin" constant="-20" id="olJ-rd-BWk"/>
+                            <constraint firstItem="dV4-JL-pol" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="30" id="r1F-pA-BFl">
+                                <variation key="heightClass=compact" constant="60"/>
+                            </constraint>
                             <constraint firstItem="r1e-Oh-mPV" firstAttribute="leading" secondItem="MSU-4e-V1Z" secondAttribute="leadingMargin" constant="30" id="ujH-C7-26K"/>
                             <constraint firstItem="r1e-Oh-mPV" firstAttribute="top" secondItem="7oo-ev-s2b" secondAttribute="bottom" constant="350" id="urq-Mi-OHL"/>
                         </constraints>
@@ -539,13 +559,18 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
         <scene sceneID="jnh-Q9-Aah">
             <objects>
                 <tableViewController id="MTJ-nf-IJz" customClass="RoutesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" id="FKV-Aa-LD1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" id="FKV-Aa-LD1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.066666666666666666" green="0.14117647058823529" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="1" minY="0.0" maxX="1" maxY="0.0"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="mrP-Qi-fqP">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textAttributes key="titleTextAttributes">
+                                <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                            </textAttributes>
                             <items>
                                 <navigationItem title="Histórico de Exercícios" id="6Bm-Qb-AHd">
                                     <barButtonItem key="rightBarButtonItem" title="Editar" id="xBW-FX-CUe">
@@ -595,12 +620,6 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-si-gHd">
-                                            <rect key="frame" x="258" y="44" width="334" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-AC-Ync">
                                             <rect key="frame" x="258" y="69" width="334" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -614,8 +633,14 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                                 <constraint firstAttribute="width" constant="80" id="hw6-JS-65i"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-si-gHd">
+                                            <rect key="frame" x="258" y="44" width="334" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.078431372549019607" green="0.18823529411764706" blue="0.22745098039215686" alpha="0.059999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.78431372549019607" green="0.80784313725490198" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="uVp-bA-Ho8" firstAttribute="leading" secondItem="6ks-UZ-cKp" secondAttribute="leadingMargin" constant="120" id="1I6-Do-8QB"/>
                                         <constraint firstItem="M3N-Yl-t1H" firstAttribute="leading" secondItem="6ks-UZ-cKp" secondAttribute="leadingMargin" constant="120" id="3d4-F5-560"/>
@@ -665,7 +690,7 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZA-fg-ZHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50" y="1118"/>
+            <point key="canvasLocation" x="-60" y="1136"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="Wry-6h-4fB">
@@ -706,20 +731,17 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                             <constraint firstAttribute="width" constant="160" id="bYD-a6-Xcq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="26" y="191" width="150" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNs-NH-Dc6">
                                         <rect key="frame" x="190" y="20" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="191" y="191" width="393" height="21"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distancia Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmb-9b-b9D">
                                         <rect key="frame" x="10" y="61" width="160" height="21"/>
@@ -727,20 +749,17 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                             <constraint firstAttribute="width" constant="160" id="HPb-rs-nMA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="26" y="221" width="150" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCV-wX-1Bi">
                                         <rect key="frame" x="190" y="61" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="191" y="221" width="393" height="21"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tempo Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFa-Ay-cCF">
                                         <rect key="frame" x="10" y="101" width="160" height="21"/>
@@ -748,20 +767,17 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                             <constraint firstAttribute="width" constant="160" id="fJW-Ny-DEp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="26" y="252" width="150" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIZ-mU-ijU">
                                         <rect key="frame" x="190" y="101" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="191" y="252" width="393" height="21"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Velocidade Média:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlQ-dZ-dLr">
                                         <rect key="frame" x="10" y="142" width="160" height="21"/>
@@ -769,9 +785,9 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                             <constraint firstAttribute="width" constant="160" id="CwV-z4-eQC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="26" y="282" width="150" height="21"/>
                                         </variation>
                                     </label>
@@ -781,7 +797,7 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                             <constraint firstAttribute="width" constant="160" id="Rpn-3y-A0K"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total de Descida:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtM-af-VFf">
@@ -790,32 +806,26 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                             <constraint firstAttribute="width" constant="160" id="yba-1C-hCg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOy-H4-H4x">
                                         <rect key="frame" x="190" y="182" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onR-Eg-A1Q">
                                         <rect key="frame" x="190" y="223" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="10" y="142" width="42" height="21"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8O-Oh-wnv">
                                         <rect key="frame" x="190" y="142" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="191" y="282" width="393" height="21"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -847,12 +857,12 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="294" y="70" width="290" height="276"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="16" y="597" width="368" height="129"/>
                                 </variation>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.054901960784313725" green="0.10588235294117647" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0B5-sW-19E" firstAttribute="top" secondItem="LqR-n6-ZrN" secondAttribute="topMargin" id="2ET-4A-D4R"/>
                             <constraint firstItem="ECX-xr-FWg" firstAttribute="top" secondItem="D8e-QL-wJv" secondAttribute="bottom" constant="20" id="Fm5-Ij-0Bm"/>
@@ -934,7 +944,7 @@ Desenvolvido pelo TheBestGroup: Bruno Omella, João Marcos, Patricia Abreu. </s
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsf-Fn-XgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="1116"/>
+            <point key="canvasLocation" x="639" y="1136"/>
         </scene>
     </scenes>
     <resources>

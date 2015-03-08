@@ -2,8 +2,8 @@
 //  MainViewController.m
 //  RunRoute
 //
-//  Created by Bruno Omella Mainieri on 3/2/15.
-//  Copyright (c) 2015 Bruno Omella. All rights reserved.
+//  Created by TheBestGroup on 3/2/15.
+//  Copyright (c) 2015 TheBestGroup. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -28,9 +28,6 @@ float dist;
     points = [[NSMutableArray alloc] init];
     locationManager = [[CLLocationManager alloc] init];
     dss = [DataSourceSingleton instance];
-    //nsTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showInfo) userInfo:nil repeats:YES];
-    //dateFormatter = [[NSDateFormatter alloc]init];
-    //[dateFormatter setDateFormat:@"HH:mm:ss"];
     isSession = NO;
     
     // Seta a precisão da informção
@@ -47,10 +44,11 @@ float dist;
     // Centraliza na localização do usuário, mas nao o segue
     [locationManager startUpdatingLocation];
     
-    // Do any additional setup after loading the view.
+    // Esconde o botão de stop
     _stopButtonOutlet.hidden = YES;
-    _auxType = @"Walk";
     
+    // Defini o default do tipo de exercício
+    _auxType = @"Walk";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,16 +70,15 @@ float dist;
     if (nil == currentSession) {
         CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
         
-        //Determinar região com as coordenadas de localização atual e os limites N/S e L/O no zoom em metros
+        // Determinar região com as coordenadas de localização atual e os limites N/S e L/O no zoom em metros
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
         
-        //Mudar a região atual para visualização de forma animada
-        [map setRegion:region animated:YES ];
+        // Mudar a região atual para visualização de forma animada
+        [map setRegion:region animated:YES];
         
         [locationManager stopUpdatingLocation];
     }
     else {
-    
         [points addObject:[locations lastObject]];
         int aux = (int)points.count;
         if(aux>1){
@@ -94,26 +91,18 @@ float dist;
 
 -(void)showInfo{
     if(isSession){
-//        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[NSDate date]timeIntervalSinceDate:[(CLLocation*)[points firstObject]timestamp]]];
-//        _timeDisplay.text = [dateFormatter stringFromDate:date];
-        
-        
-        
-        //atualiza o timer no tela com o tempo a partir do começo da sessão
+        // Atualiza o timer no tela com o tempo a partir do começo da sessão
         int seconds = (int)round([[NSDate date]timeIntervalSinceDate:[(CLLocation*)[points firstObject]timestamp]]);
-        NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u",
-                            seconds / 3600, (seconds / 60) % 60, seconds % 60];
+        NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u", seconds / 3600, (seconds / 60) % 60, seconds % 60];
         _timeDisplay.text = timeString;
         
         NSString *distString = [NSString stringWithFormat:@"%.2f m",dist];
         _distDisplay.text = distString;
-        
     }
 }
 
 
 - (IBAction)startButton:(id)sender {
-    
     // Inicia a atualização da localização dentro de uma sessão
     [locationManager startUpdatingLocation];
     
@@ -122,9 +111,14 @@ float dist;
     dist = 0.0;
     currentSession.typeExercise = _auxType;
     
-    _stopButtonOutlet.hidden = NO;
+    // Esconde o botão play e o tipo de exercício
     _startButtonOutlet.hidden = YES;
     _typeExercise.hidden = YES;
+    
+    // Mostra o botão stop
+    _stopButtonOutlet.hidden = NO;
+    
+    // "Segue" o usuário
     map.userTrackingMode = YES;
 }
 
@@ -134,30 +128,32 @@ float dist;
     
     [locationManager stopUpdatingLocation];
     
-    
     // Grava os dados da sessão
     currentSession.points = points;
     [currentSession calcDist];
     [currentSession calcTime];
-    NSLog(@"Distancia: %f", [currentSession calcDist]);
-    NSLog(@"Tempo: %f", [currentSession calcTime]);
+//    NSLog(@"Distancia: %f", [currentSession calcDist]);
+//    NSLog(@"Tempo: %f", [currentSession calcTime]);
     
     [dss addSession:currentSession];
     
     // Esvazia os objetos
     currentSession = nil;
     
-    // Recria o pontos
+    // Recria os pontos
     points = [[NSMutableArray alloc] init];
     
+    // Cria e exibe um alerta no final do exercício
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Exercício Concluído" message:@"Exercício salvo no seu histórico 😁"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     
+    // Esconde o stop
     _stopButtonOutlet.hidden = YES;
+    
+    // Mostra o play e tipo de exercício
     _startButtonOutlet.hidden = NO;
     _typeExercise.hidden = NO;
 }
-
 
 #pragma mark - PolyLine
 
@@ -196,6 +192,7 @@ float dist;
 }
 
 - (IBAction)typeExercise:(id)sender{
+    // Tipo de exercício
     switch (((UISegmentedControl*) sender).selectedSegmentIndex) {
         case 0:
             _auxType = @"Walk";
@@ -213,7 +210,12 @@ float dist;
 }
 
 - (IBAction)locationButton:(id)sender {
+    // "Segue" o usuário
     map.userTrackingMode = YES;
-    
+}
+
+// Seta o texto da status bar, branco
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 @end

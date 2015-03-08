@@ -2,8 +2,8 @@
 //  Session.m
 //  RunRoute
 //
-//  Created by Bruno Omella Mainieri on 3/3/15.
-//  Copyright (c) 2015 Bruno Omella. All rights reserved.
+//  Created by TheBestGroup on 3/3/15.
+//  Copyright (c) 2015 TheBestGroup. All rights reserved.
 //
 
 #import "Session.h"
@@ -56,7 +56,6 @@
         if([[points objectAtIndex:i] speed]>aux)
             aux = (float)[[points objectAtIndex:i] speed];
     }
-    //NSLog(@"%f",aux);
     return aux*3.6;
 }
 
@@ -72,7 +71,6 @@
         }
         else
             aux=0.0;
-        
     }
     NSLog(@"%f",max);
     return max;

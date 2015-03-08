@@ -2,8 +2,8 @@
 //  DetailsViewController.m
 //  RunRoute
 //
-//  Created by Bruno Omella Mainieri on 3/2/15.
-//  Copyright (c) 2015 Bruno Omella. All rights reserved.
+//  Created by TheBestGroup on 3/2/15.
+//  Copyright (c) 2015 TheBestGroup. All rights reserved.
 //
 
 #import "DetailsViewController.h"
@@ -20,17 +20,19 @@
     [super viewDidLoad];
     [map setDelegate:self];
     
-    _speedLabel.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[session calcSpeed]];
-    
+    // Converte o tempo para texto
     int seconds = (int)round([session calcTime]);
-    NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u",
-                            seconds / 3600, (seconds / 60) % 60, seconds % 60];
+    NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u", seconds / 3600, (seconds / 60) % 60, seconds % 60];
+    
+    // Seta os textos das labels de informação
     _timeLabel.text = timeString;
+    _speedLabel.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[session calcSpeed]];
     _dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [session startDateWithHour]];
     _distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [session calcDist]];
     _maxSpeedDisplay.text = [[NSString alloc] initWithFormat:@"%f km/h",[session getMaxSpeed]];
     _slope.text = [[NSString alloc] initWithFormat:@"%f m", [session totalDownSlope]];
     
+    // Configura o scroll view
     _scroll.scrollEnabled = YES;
     _scroll.contentSize = CGSizeMake(600, 600);
                              
@@ -38,7 +40,7 @@
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[session.points firstObject]coordinate], 250, 250);
     
-    //Mudar a região atual para visualização de forma animada
+    // Mudar a região atual para visualização de forma animada
     [map setRegion:region animated:NO ];
     
     
@@ -51,10 +53,6 @@
     self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     [session totalDownSlope];
-    //[map setScrollEnabled:NO];
-    
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,10 +71,12 @@
 */
 
 - (IBAction)voltarButton:(id)sender {
+    // Volta pra tela anterior
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)leftSwipe{
+    // Volta pra tela anterior
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
