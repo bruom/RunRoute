@@ -22,6 +22,7 @@ NSMutableArray *sessions;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //usamos um Singleton para guardar os dados - não há persistencia nesta versão
     DataSourceSingleton *dss = [DataSourceSingleton instance];
     
     sessions = dss.sessions;
@@ -71,6 +72,7 @@ NSMutableArray *sessions;
 }
 
 
+//inicializa a célula com as informações necessárias - todas provenientes dos objetos Session que guardam cada sessão de exercícios
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RouteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteCell" forIndexPath:indexPath];
     long row = [indexPath row];
@@ -86,7 +88,7 @@ NSMutableArray *sessions;
     NSString *aux = [[sessions objectAtIndex:row] typeExercise];
     
     if ([aux isEqualToString:@"Walk"]){
-        NSLog(@"%@", aux);
+        //NSLog(@"%@", aux);
         cell.image.image =[UIImage imageNamed: @"walkicon.png"];
     }
     if ([aux isEqualToString:@"Run"])
@@ -105,6 +107,8 @@ NSMutableArray *sessions;
     return YES;
 }
 */
+
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -150,6 +154,8 @@ NSMutableArray *sessions;
     }
 }
 
+
+//botão que habilita ou desabilita a remoção de registros de sessões do histórico
 - (IBAction)editButton:(id)sender {
     // Transforma o botão da navigation bar
     if (self.editing == YES) {

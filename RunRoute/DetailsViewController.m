@@ -29,8 +29,11 @@
     _speedLabel.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[session calcSpeed]];
     _dateLabel.text = [[NSString alloc] initWithFormat:@"%@", [session startDateWithHour]];
     _distLabel.text = [[NSString alloc] initWithFormat:@"%.2f m", [session calcDist]];
-    _maxSpeedDisplay.text = [[NSString alloc] initWithFormat:@"%f km/h",[session getMaxSpeed]];
-    _slope.text = [[NSString alloc] initWithFormat:@"%f m", [session totalDownSlope]];
+    _maxSpeedDisplay.text = [[NSString alloc] initWithFormat:@"%.2f km/h",[session getMaxSpeed]];
+    
+    
+    //não foi possível implementar cálculo de altitude nesta versão
+    //_slope.text = [[NSString alloc] initWithFormat:@"%.2f m", [session totalDownSlope]];
     
     // Configura o scroll view
     _scroll.scrollEnabled = YES;
@@ -40,7 +43,7 @@
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[session.points firstObject]coordinate], 250, 250);
     
-    // Mudar a região atual para visualização de forma animada
+    // Mudar a região atual para visualização de forma não-animada
     [map setRegion:region animated:NO ];
     
     
@@ -52,7 +55,6 @@
     // Muda o tipo da transição de telas
     self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
-    [session totalDownSlope];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,7 +86,7 @@
 
 -(void)drawRoute:(NSArray*)points{
     
-    // Para evitar de criar infinitas linhas e sobrecarregar a memoria
+    //mesmo metodo do main view para desenhar a rota no mapa, desenha a partir da lista de pontos no objeto Session
 
     CLLocationCoordinate2D coords[points.count];
     for(int i=0; i< points.count; i++){
@@ -98,6 +100,8 @@
 }
 
 #pragma mark - MKMapViewDelegate
+
+    //mesmo renderer pro overlay do mapa, igual ao usado no main view
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {

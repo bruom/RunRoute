@@ -67,17 +67,18 @@ float dist;
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     
+    //quando acessa o mapa pela primeira vez, ainda sem sessão, centraliza na posição do usuário
     if (nil == currentSession) {
         CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
+       
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
         
-        // Determinar região com as coordenadas de localização atual e os limites N/S e L/O no zoom em metros
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
-        
-        // Mudar a região atual para visualização de forma animada
         [map setRegion:region animated:YES];
         
         [locationManager stopUpdatingLocation];
     }
+    
+    //bloco para atualizaões durante as sessões
     else {
         [points addObject:[locations lastObject]];
         int aux = (int)points.count;
@@ -157,11 +158,14 @@ float dist;
 
 #pragma mark - PolyLine
 
+//cria um overlay a partir de um objeto MKPolyline; é uma linha traçada sobre o mapa com base em coordenadas
 -(void)drawRoute:(NSMutableArray*)pontos{
     
     // Para evitar de criar infinitas linhas e sobrecarregar a memoria
     if(nil!=lastLine)
         [map removeOverlay:lastLine];
+    
+    //como precisamos apenas das coordenadas, e não do CLLocation inteiro, passamos para um vetor auxiliar
     CLLocationCoordinate2D coords[points.count];
     for(int i=0; i< points.count; i++){
         CLLocation *local = [points objectAtIndex:i];
@@ -171,11 +175,14 @@ float dist;
     }
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coords count:points.count];
     lastLine = polyline;
+    
+    //adiciona o overlay ao mapa; um renderer então cuida de sua exibição na tela
     [map addOverlay:polyline];
 }
 
 #pragma mark - MKMapViewDelegate
 
+//configura o renderer que vai tratar de desenhar o overylay no mapa; é chamado pelo delegate (esta própria classe) quando um novo overlay é adicionado (no caso, durante a execução do método drawRoute)
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {
     if ([overlay isKindOfClass:[MKPolyline class]])
@@ -184,6 +191,7 @@ float dist;
         
         // É ESSE QUE DEFINE A COR
         renderer.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:0.7];
+        //largura da linha desenahda
         renderer.lineWidth   = 5;
         
         return renderer;
