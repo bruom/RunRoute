@@ -37,7 +37,7 @@
     
     // Configura o scroll view
     _scroll.scrollEnabled = YES;
-    _scroll.contentSize = CGSizeMake(600, 600);
+    _scroll.contentSize = CGSizeMake(300, 200);
                              
     [self drawRoute:session.points];
     
@@ -54,7 +54,6 @@
     
     // Muda o tipo da transição de telas
     self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,7 +85,7 @@
 
 -(void)drawRoute:(NSArray*)points{
     
-    //mesmo metodo do main view para desenhar a rota no mapa, desenha a partir da lista de pontos no objeto Session
+    // Mesmo metodo do main view para desenhar a rota no mapa, desenha a partir da lista de pontos no objeto Session
 
     CLLocationCoordinate2D coords[points.count];
     for(int i=0; i< points.count; i++){

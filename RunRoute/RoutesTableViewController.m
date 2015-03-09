@@ -72,7 +72,7 @@ NSMutableArray *sessions;
 }
 
 
-//inicializa a célula com as informações necessárias - todas provenientes dos objetos Session que guardam cada sessão de exercícios
+// Inicializa a célula com as informações necessárias - todas provenientes dos objetos Session que guardam cada sessão de exercícios
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RouteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteCell" forIndexPath:indexPath];
     long row = [indexPath row];
@@ -112,6 +112,7 @@ NSMutableArray *sessions;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Remove o objeto da classe sessions ao remover da tableview
         [sessions removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -142,20 +143,14 @@ NSMutableArray *sessions;
         DetailsViewController *appView = segue.destinationViewController;
         
         long row = [indexPath row];
-//        NSString *speed = [[NSString alloc] initWithFormat:@"%.2f km/h",[[sessions objectAtIndex:row] calcSpeed]];
-//        int seconds = (int)round([[sessions objectAtIndex:row] calcTime]);
-//        
-//        NSString *time = [NSString stringWithFormat:@"%02u:%02u:%02u",seconds / 3600, (seconds / 60) % 60, seconds % 60];
-//        NSString *dist = [[NSString alloc] initWithFormat:@"%.2f m", [[sessions objectAtIndex:row] calcDist]];
-//        NSString *date = [[NSString alloc] initWithFormat:@"%@", [[sessions objectAtIndex:row]startDate]];
-//        NSArray *aux = [NSArray arrayWithObjects:speed,time,dist,date,nil];
+
         DataSourceSingleton* dss = [DataSourceSingleton instance];
         appView.session = [dss.sessions objectAtIndex:row];
     }
 }
 
 
-//botão que habilita ou desabilita a remoção de registros de sessões do histórico
+// Botão que habilita ou desabilita a remoção de registros de sessões do histórico
 - (IBAction)editButton:(id)sender {
     // Transforma o botão da navigation bar
     if (self.editing == YES) {

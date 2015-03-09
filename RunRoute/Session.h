@@ -11,7 +11,7 @@
 
 @interface Session : NSObject
 
-//array que contem os pontos da rota; a partir dos quais é possivel redesenhar e calcular todos os detalhes
+// Array que contem os pontos da rota; a partir dos quais é possivel redesenhar e calcular todos os detalhes
 @property NSArray* points;
 
 @property float distance;
@@ -31,6 +31,6 @@
 
 -(float)getMaxSpeed;
 
-//não foi possível impementar cálculo de altitude nesta versão
+// Não foi possível impementar cálculo de altitude nesta versão
 //-(float)totalDownSlope;
 @end

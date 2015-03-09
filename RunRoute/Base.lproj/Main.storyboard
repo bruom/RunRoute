@@ -408,7 +408,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emf-Tn-z2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-811" y="680"/>
+            <point key="canvasLocation" x="-895.5" y="682.5"/>
         </scene>
         <!--Sobre-->
         <scene sceneID="cXZ-gS-vLK">
@@ -447,8 +447,12 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="330"/>
                                     </constraint>
                                 </constraints>
-                                <string key="text">Este aplicativo é dedicado às pessoas que gostam de correr, andar de bicicleta ou dar uma caminhada e que desejam ter acesso a informações como percurso e distância percorrida, tempo gasto no percurso e velocidade média para que possam comparar e melhorar seus índices a partir da data e do tipo de exercício escolhido.
-Desenvolvido pelo TheBestGroup: TheBestGroup, João Marcos, Patricia Abreu. </string>
+                                <string key="text">	Este aplicativo é dedicado às pessoas que gostam de correr, andar de bicicleta ou dar uma caminhada e que desejam ter acesso a informações como percurso e distância percorrida, tempo gasto no percurso e velocidade média para que possam comparar e melhorar seus índices a partir da data e do tipo de exercício escolhido.
+
+Desenvolvido pelo TheBestGroup: 
+- Bruno Omella
+- João Marcos
+- Patricia Abreu</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=compact">
@@ -553,7 +557,7 @@ Desenvolvido pelo TheBestGroup: TheBestGroup, João Marcos, Patricia Abreu. </s
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjF-oz-fIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-811" y="1464"/>
+            <point key="canvasLocation" x="-895.5" y="1387.5"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="jnh-Q9-Aah">
@@ -563,7 +567,7 @@ Desenvolvido pelo TheBestGroup: TheBestGroup, João Marcos, Patricia Abreu. </s
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.61867523923444978" green="0.63884943181818188" blue="0.63884943181818188" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="separatorColor" red="0.7843137255" green="0.80784313730000001" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="1" minY="0.0" maxX="1" maxY="0.0"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="mrP-Qi-fqP">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -829,7 +833,7 @@ Desenvolvido pelo TheBestGroup: TheBestGroup, João Marcos, Patricia Abreu. </s
                                     <rect key="frame" x="294" y="70" width="290" height="276"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="597" width="368" height="129"/>
+                                    <rect key="frame" x="16" y="596" width="368" height="141.5"/>
                                 </variation>
                             </scrollView>
                         </subviews>
@@ -914,7 +918,7 @@ Desenvolvido pelo TheBestGroup: TheBestGroup, João Marcos, Patricia Abreu. </s
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsf-Fn-XgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="633" y="1172"/>
+            <point key="canvasLocation" x="664.5" y="1135.5"/>
         </scene>
     </scenes>
     <resources>

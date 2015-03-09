@@ -22,8 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *speedLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UILabel *maxSpeedDisplay;
-@property (weak, nonatomic) IBOutlet UILabel *slope;
-- (IBAction)voltarButton:(id)sender;
 
+- (IBAction)voltarButton:(id)sender;
 
 @end

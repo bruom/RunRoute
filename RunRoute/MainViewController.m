@@ -19,7 +19,6 @@
 //NSDateFormatter *dateFormatter;
 float dist;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,7 +37,7 @@ float dist;
     if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization )]) {
         [locationManager requestWhenInUseAuthorization];
     }
-    
+
     map.showsUserLocation = YES;
     
     // Centraliza na localização do usuário, mas nao o segue
@@ -67,7 +66,7 @@ float dist;
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     
-    //quando acessa o mapa pela primeira vez, ainda sem sessão, centraliza na posição do usuário
+    // Quando acessa o mapa pela primeira vez, ainda sem sessão, centraliza na posição do usuário
     if (nil == currentSession) {
         CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
        
@@ -78,7 +77,7 @@ float dist;
         [locationManager stopUpdatingLocation];
     }
     
-    //bloco para atualizaões durante as sessões
+    // Bloco para atualizações durante as sessões
     else {
         [points addObject:[locations lastObject]];
         int aux = (int)points.count;
@@ -92,7 +91,7 @@ float dist;
 
 -(void)showInfo{
     if(isSession){
-        // Atualiza o timer no tela com o tempo a partir do começo da sessão
+        // Atualiza o timer na tela com o tempo a partir do começo da sessão
         int seconds = (int)round([[NSDate date]timeIntervalSinceDate:[(CLLocation*)[points firstObject]timestamp]]);
         NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u", seconds / 3600, (seconds / 60) % 60, seconds % 60];
         _timeDisplay.text = timeString;
@@ -158,14 +157,14 @@ float dist;
 
 #pragma mark - PolyLine
 
-//cria um overlay a partir de um objeto MKPolyline; é uma linha traçada sobre o mapa com base em coordenadas
+// Cria um overlay a partir de um objeto MKPolyline; é uma linha traçada sobre o mapa com base em coordenadas
 -(void)drawRoute:(NSMutableArray*)pontos{
     
     // Para evitar de criar infinitas linhas e sobrecarregar a memoria
     if(nil!=lastLine)
         [map removeOverlay:lastLine];
     
-    //como precisamos apenas das coordenadas, e não do CLLocation inteiro, passamos para um vetor auxiliar
+    // Como precisamos apenas das coordenadas, e não do CLLocation inteiro, passamos para um vetor auxiliar
     CLLocationCoordinate2D coords[points.count];
     for(int i=0; i< points.count; i++){
         CLLocation *local = [points objectAtIndex:i];
@@ -222,8 +221,8 @@ float dist;
     map.userTrackingMode = YES;
 }
 
-// Seta o texto da status bar, branco
+// Seta o texto da status bar, preto
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 @end
