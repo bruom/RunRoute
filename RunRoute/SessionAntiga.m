@@ -2,41 +2,25 @@
 //  Session.m
 //  RunRoute
 //
-//  Created by Patricia de Abreu on 07/04/15.
-//  Copyright (c) 2015 Bruno Omella. All rights reserved.
+//  Created by TheBestGroup on 3/3/15.
+//  Copyright (c) 2015 TheBestGroup. All rights reserved.
 //
 
-#import "Session.h"
-#import "RoutePoint.h"
-
+#import "SessionAntiga.h"
 
 @implementation Session
 
-@dynamic date;
-@dynamic distance;
-@dynamic time;
-@dynamic typeExercise;
-@dynamic routePoints;
-
-@synthesize points;
-
+@synthesize points, distance, time, typeExercise;
 
 -(float)calcDist{
-    float pit;
     if(nil==points || points.count == 0){
         return 0.0;
     }
     float dist = 0.0;
     for(int i=0;i<points.count-1;i++){
-       // dist += [[points objectAtIndex:i]distanceFromLocation:[points objectAtIndex:i+1]];
-        NSNumber* x = [(RoutePoint*)[points objectAtIndex:i]x];
-        NSNumber* y = [(RoutePoint*)[points objectAtIndex:i+1]y];
-        
-        pit = sqrt(pow([x floatValue], 2)+pow([y floatValue], 2));
-        dist+=pit;
-        
+        dist += (float)[[points objectAtIndex:i]distanceFromLocation:[points objectAtIndex:i+1]];
     }
-    self.distance = [NSNumber numberWithFloat:dist];
+    distance = dist;
     return dist;
 }
 
@@ -44,9 +28,7 @@
     NSDate *start = [[points firstObject]timestamp];
     NSDate *end = [[points lastObject]timestamp];
     NSTimeInterval aux = [end timeIntervalSinceDate:start];
-    
-#warning tem que arrumar isso pra virar time interval
-    self.time = [NSNumber numberWithFloat:aux];
+    time = aux;
     return aux;
 }
 
@@ -71,10 +53,27 @@
 -(float)getMaxSpeed{
     float aux = 0.0;
     for(int i=0; i<points.count;i++){
-        if([[[points objectAtIndex:i] speed]floatValue]>aux)
-            aux = [[[points objectAtIndex:i] speed]floatValue];
+        if([[points objectAtIndex:i] speed]>aux)
+            aux = (float)[[points objectAtIndex:i] speed];
     }
     return aux*3.6;
+}
+
+-(float)totalDownSlope{
+    float aux=0.0;
+    float max=0.0;
+    for(int i=1;i<points.count;i++){
+        if([[points objectAtIndex:i] altitude]<=[[points objectAtIndex:i-1] altitude]){
+            aux+=[[points objectAtIndex:i-1] altitude]-[[points objectAtIndex:i] altitude];
+            NSLog(@"%f",aux);
+            if(aux>max)
+                max=aux;
+        }
+        else
+            aux=0.0;
+    }
+    NSLog(@"%f",max);
+    return max;
 }
 
 @end
