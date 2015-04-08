@@ -2,21 +2,34 @@
 //  Session.h
 //  RunRoute
 //
-//  Created by TheBestGroup on 3/3/15.
-//  Copyright (c) 2015 TheBestGroup. All rights reserved.
+//  Created by Patricia de Abreu on 07/04/15.
+//  Copyright (c) 2015 Bruno Omella. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import <CoreData/CoreData.h>
+#import "RoutePoint.h"
 
-@interface Session : NSObject
+@class RoutePoint;
 
-// Array que contem os pontos da rota; a partir dos quais é possivel redesenhar e calcular todos os detalhes
-@property NSArray* points;
+@interface Session : NSManagedObject
 
-@property float distance;
-@property NSTimeInterval time;
-@property NSString* typeExercise;
+@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) NSNumber * distance;
+@property (nonatomic, retain) NSNumber * time;
+@property (nonatomic, retain) NSString * typeExercise;
+@property (nonatomic, retain) NSSet *routePoints;
+
+@property NSArray *points;
+
+@end
+
+@interface Session (CoreDataGeneratedAccessors)
+
+- (void)addPointsObject:(Point *)value;
+- (void)removePointsObject:(Point *)value;
+- (void)addPoints:(NSSet *)values;
+- (void)removePoints:(NSSet *)values;
 
 
 -(float)calcDist;
@@ -31,6 +44,4 @@
 
 -(float)getMaxSpeed;
 
-// Não foi possível impementar cálculo de altitude nesta versão
-//-(float)totalDownSlope;
 @end

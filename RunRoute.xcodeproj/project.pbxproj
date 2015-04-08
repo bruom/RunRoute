@@ -20,7 +20,7 @@
 		151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07841AA4CC4D007E66CD /* DetailsViewController.m */; };
 		151A07881AA4CC5F007E66CD /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07871AA4CC5F007E66CD /* AboutViewController.m */; };
 		151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */; };
-		152FCC641AA61DBF00E540EB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FCC631AA61DBF00E540EB /* Session.m */; };
+		152FCC641AA61DBF00E540EB /* SessionAntiga.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FCC631AA61DBF00E540EB /* SessionAntiga.m */; };
 		15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */; };
 		15C353E51AD08E560002F27B /* GraficoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C353E41AD08E560002F27B /* GraficoView.m */; };
 		15C353E81AD093980002F27B /* GraficoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C353E71AD093980002F27B /* GraficoViewController.m */; };
@@ -60,8 +60,8 @@
 		151A07871AA4CC5F007E66CD /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		151A07891AA4CE7A007E66CD /* RouteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteTableViewCell.h; sourceTree = "<group>"; };
 		151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTableViewCell.m; sourceTree = "<group>"; };
-		152FCC621AA61DBF00E540EB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
-		152FCC631AA61DBF00E540EB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		152FCC621AA61DBF00E540EB /* SessionAntiga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionAntiga.h; sourceTree = "<group>"; };
+		152FCC631AA61DBF00E540EB /* SessionAntiga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionAntiga.m; sourceTree = "<group>"; };
 		15998DC81AA6242100DE2DDA /* DataSourceSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceSingleton.h; sourceTree = "<group>"; };
 		15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceSingleton.m; sourceTree = "<group>"; };
 		15C353E31AD08E560002F27B /* GraficoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficoView.h; sourceTree = "<group>"; };
@@ -75,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8BE2D51AD469C5000E3070 /* CoreData.framework in Frameworks */,
 				151A077C1AA4CAC3007E66CD /* MapKit.framework in Frameworks */,
 				151A077A1AA4CABC007E66CD /* CoreLocation.framework in Frameworks */,
 			);
@@ -93,6 +94,7 @@
 		151A07471AA4CAAD007E66CD = {
 			isa = PBXGroup;
 			children = (
+				6A8BE2D41AD469C5000E3070 /* CoreData.framework */,
 				151A077B1AA4CAC3007E66CD /* MapKit.framework */,
 				151A07791AA4CABC007E66CD /* CoreLocation.framework */,
 				151A07521AA4CAAD007E66CD /* RunRoute */,
@@ -127,8 +129,10 @@
 				151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */,
 				151A07801AA4CC2F007E66CD /* RoutesTableViewController.h */,
 				151A07811AA4CC2F007E66CD /* RoutesTableViewController.m */,
-				152FCC621AA61DBF00E540EB /* Session.h */,
-				152FCC631AA61DBF00E540EB /* Session.m */,
+				152FCC621AA61DBF00E540EB /* SessionAntiga.h */,
+				152FCC631AA61DBF00E540EB /* SessionAntiga.m */,
+				6A8BE2DC1AD46C6C000E3070 /* Session.h */,
+				6A8BE2DD1AD46C6C000E3070 /* Session.m */,
 				151A075D1AA4CAAE007E66CD /* Main.storyboard */,
 				151A07601AA4CAAE007E66CD /* Images.xcassets */,
 				151A07621AA4CAAE007E66CD /* LaunchScreen.xib */,
@@ -275,6 +279,7 @@
 				15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */,
 				151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */,
 				151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */,
+				6A8BE2DE1AD46C6C000E3070 /* Session.m in Sources */,
 				151A077F1AA4CC05007E66CD /* MainViewController.m in Sources */,
 				151A07561AA4CAAE007E66CD /* main.m in Sources */,
 				151A07821AA4CC2F007E66CD /* RoutesTableViewController.m in Sources */,
@@ -480,6 +485,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6A8BE2D61AD469E1000E3070 /* coreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6A8BE2D71AD469E1000E3070 /* coreDataModel.xcdatamodel */,
+			);
+			currentVersion = 6A8BE2D71AD469E1000E3070 /* coreDataModel.xcdatamodel */;
+			path = coreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 151A07481AA4CAAD007E66CD /* Project object */;
 }
