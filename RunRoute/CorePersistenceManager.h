@@ -19,4 +19,6 @@
 
 - (NSArray *)fetchDataForEntity:(NSString *)entity usingPredicate:(NSPredicate *)predicate;
 
+-(void)saveContext;
+
 @end

@@ -148,7 +148,7 @@ float dist;
     
     [dss addSession:currentSession];
     
-    //[[CorePersistenceManager sharedInstance]saveContext];
+    [[CorePersistenceManager sharedInstance]saveContext];
     
     // Esvazia os objetos
     currentSession = nil;

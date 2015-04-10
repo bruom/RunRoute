@@ -153,7 +153,7 @@ NSMutableArray *sessions;
         long row = [indexPath row];
 
         DataSourceSingleton* dss = [DataSourceSingleton instance];
-        appView.session = [dss.sessions objectAtIndex:row];
+        appView.session = [sessions objectAtIndex:row];
     }
 }
 
