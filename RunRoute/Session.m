@@ -8,6 +8,7 @@
 
 #import "Session.h"
 #import "RoutePoint.h"
+#import <CoreLocation/CoreLocation.h>
 
 
 @implementation Session
@@ -22,18 +23,26 @@
 
 
 -(float)calcDist{
+    
+    //retorna os pontos do NSSet de forma ordenada por timestamp
+    NSArray *pontosArray = [[self.routePoints allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[(RoutePoint *)obj1 timestamp] compare:[(RoutePoint *)obj2 timestamp]];
+    }];
+    
     float pit;
-    if(nil==points || points.count == 0){
+    if(nil==self.routePoints || self.routePoints.count == 0){
         return 0.0;
     }
     float dist = 0.0;
-    for(int i=0;i<points.count-1;i++){
-       // dist += [[points objectAtIndex:i]distanceFromLocation:[points objectAtIndex:i+1]];
-        NSNumber* x = [(RoutePoint*)[points objectAtIndex:i]x];
-        NSNumber* y = [(RoutePoint*)[points objectAtIndex:i+1]y];
-        
-        pit = sqrt(pow([x floatValue], 2)+pow([y floatValue], 2));
-        dist+=pit;
+    for(int i=0;i<pontosArray.count-1;i++){
+        CLLocation *coord = [[CLLocation alloc]initWithLatitude:[[(RoutePoint*)[pontosArray objectAtIndex:i]x] doubleValue] longitude:[[(RoutePoint*)[pontosArray objectAtIndex:i]y] doubleValue]];
+        CLLocation *coord2 = [[CLLocation alloc]initWithLatitude:[[(RoutePoint*)[pontosArray objectAtIndex:i+1]x] doubleValue] longitude:[[(RoutePoint*)[pontosArray objectAtIndex:i+1]y] doubleValue]];
+        dist += [coord distanceFromLocation:coord2];
+//        float x = [[[pontosArray objectAtIndex:i+1]x] floatValue] -  [[[pontosArray objectAtIndex:i]x] floatValue];
+//        float y = [[[pontosArray objectAtIndex:i+1]y] floatValue] -  [[[pontosArray objectAtIndex:i]y] floatValue];
+//        
+//        pit = sqrt(pow(x, 2)+pow(y, 2));
+//        dist+=pit;
         
     }
     self.distance = [NSNumber numberWithFloat:dist];
@@ -41,8 +50,14 @@
 }
 
 -(NSTimeInterval)calcTime{
-    NSDate *start = [[points firstObject]timestamp];
-    NSDate *end = [[points lastObject]timestamp];
+    
+    //retorna os pontos do NSSet de forma ordenada por timestamp
+    NSArray *pontosArray = [[self.routePoints allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[(RoutePoint *)obj1 timestamp] compare:[(RoutePoint *)obj2 timestamp]];
+    }];
+    
+    NSDate *start = [[pontosArray firstObject]timestamp];
+    NSDate *end = [[pontosArray lastObject]timestamp];
     NSTimeInterval aux = [end timeIntervalSinceDate:start];
     
 #warning tem que arrumar isso pra virar time interval
@@ -58,23 +73,35 @@
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
     [df setDateFormat:@"dd/MM/yyyy"];
     
-    return [df stringFromDate:[[points firstObject]timestamp]];
+    return [df stringFromDate:[[[self.routePoints allObjects] firstObject]timestamp]];
 }
 
 -(NSString*) startDateWithHour{
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
     [df setDateFormat:@"dd/MM/yyyy - HH:mm"];
     
-    return [df stringFromDate:[[points firstObject]timestamp]];
+    return [df stringFromDate:[[[self.routePoints allObjects] firstObject]timestamp]];
 }
 
 -(float)getMaxSpeed{
+    
+    //retorna os pontos do NSSet de forma ordenada por timestamp
+    NSArray *pontosArray = [[self.routePoints allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[(RoutePoint *)obj1 timestamp] compare:[(RoutePoint *)obj2 timestamp]];
+    }];
+    
     float aux = 0.0;
     for(int i=0; i<points.count;i++){
-        if([[[points objectAtIndex:i] speed]floatValue]>aux)
-            aux = [[[points objectAtIndex:i] speed]floatValue];
+        if([[(RoutePoint*)[pontosArray objectAtIndex:i] speed]floatValue]>aux)
+            aux = [[(RoutePoint*)[pontosArray objectAtIndex:i] speed]floatValue];
     }
     return aux*3.6;
+}
+
+-(void)addPointsObject:(RoutePoint *)value{
+    NSMutableSet *set = [[NSMutableSet alloc]initWithSet:self.routePoints];
+    [set addObject:value];
+    [self setRoutePoints:[[NSSet alloc]initWithSet:set]];
 }
 
 @end

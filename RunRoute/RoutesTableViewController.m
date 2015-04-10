@@ -10,6 +10,7 @@
 #import "DataSourceSingleton.h"
 #import "RouteTableViewCell.h"
 #import "DetailsViewController.h"
+#import "CorePersistenceManager.h"
 
 @interface RoutesTableViewController ()
 
@@ -21,11 +22,18 @@ NSMutableArray *sessions;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSArray *fetchResults = [[CorePersistenceManager sharedInstance]fetchDataForEntity:@"Session" usingPredicate:nil];
     
     //usamos um Singleton para guardar os dados - não há persistencia nesta versão
     DataSourceSingleton *dss = [DataSourceSingleton instance];
     
-    sessions = dss.sessions;
+    //sessions = dss.sessions;
+    NSArray *sortedResults = [fetchResults sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[(Session *)obj1 date] compare:[(Session *)obj2 date]];
+    }];
+    
+    sessions = [[NSMutableArray alloc]initWithArray:sortedResults];
+    
 }
 
 - (void)didReceiveMemoryWarning {

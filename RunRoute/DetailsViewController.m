@@ -20,6 +20,17 @@
     [super viewDidLoad];
     [map setDelegate:self];
     
+    NSMutableArray *coords = [[NSMutableArray alloc]init];
+    
+    //retorna os pontos do NSSet de forma ordenada por timestamp
+    NSArray *pontosArray = [[session.routePoints allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[(RoutePoint *)obj1 timestamp] compare:[(RoutePoint *)obj2 timestamp]];
+    }];
+    for(RoutePoint* rp in pontosArray){
+        CLLocation *coord = [[CLLocation alloc]initWithLatitude:[[rp x] doubleValue] longitude:[[rp y] doubleValue]];
+        [coords addObject:coord];
+    }
+    
     // Converte o tempo para texto
     int seconds = (int)round([session calcTime]);
     NSString *timeString = [NSString stringWithFormat:@"%02u:%02u:%02u", seconds / 3600, (seconds / 60) % 60, seconds % 60];
@@ -39,9 +50,9 @@
     _scroll.scrollEnabled = YES;
     _scroll.contentSize = CGSizeMake(300, 200);
                              
-    [self drawRoute:session.points];
+    [self drawRoute:coords];
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[session.points firstObject]coordinate], 250, 250);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[coords firstObject]coordinate], 250, 250);
     
     // Mudar a região atual para visualização de forma não-animada
     [map setRegion:region animated:NO ];

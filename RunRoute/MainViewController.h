@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Session.h"
 #import "DataSourceSingleton.h"
+#import "CorePersistenceManager.h"
 
 @interface MainViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 

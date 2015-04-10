@@ -26,8 +26,8 @@
 
 @interface Session (CoreDataGeneratedAccessors)
 
-- (void)addPointsObject:(Point *)value;
-- (void)removePointsObject:(Point *)value;
+- (void)addPointsObject:(RoutePoint *)value;
+- (void)removePointsObject:(RoutePoint *)value;
 - (void)addPoints:(NSSet *)values;
 - (void)removePoints:(NSSet *)values;
 

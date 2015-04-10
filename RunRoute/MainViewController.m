@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -67,7 +68,7 @@ float dist;
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     
     // Quando acessa o mapa pela primeira vez, ainda sem sessão, centraliza na posição do usuário
-    if (nil == currentSession) {
+    if (!isSession) {
         CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
        
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
@@ -79,6 +80,15 @@ float dist;
     
     // Bloco para atualizações durante as sessões
     else {
+        CLLocation *clPoint = [locations lastObject];
+        
+        //Cria nova entrada de ponto para persistir no Core Data
+        RoutePoint *rrPoint = [NSEntityDescription insertNewObjectForEntityForName:@"RoutePoint" inManagedObjectContext:[[CorePersistenceManager sharedInstance]managedObjectContext]];
+        [rrPoint setX:[NSNumber numberWithFloat:clPoint.coordinate.latitude]];
+        [rrPoint setY:[NSNumber numberWithFloat:clPoint.coordinate.longitude]];
+        [rrPoint setSpeed:[NSNumber numberWithFloat:clPoint.speed]];
+        [rrPoint setTimestamp:clPoint.timestamp];
+        [currentSession addPointsObject:rrPoint];
         [points addObject:[locations lastObject]];
         int aux = (int)points.count;
         if(aux>1){
@@ -106,7 +116,7 @@ float dist;
     // Inicia a atualização da localização dentro de uma sessão
     [locationManager startUpdatingLocation];
     
-    currentSession = [[Session alloc] init];
+    currentSession = [NSEntityDescription insertNewObjectForEntityForName:@"Session" inManagedObjectContext:[[CorePersistenceManager sharedInstance]managedObjectContext]];
     isSession = YES;
     dist = 0.0;
     currentSession.typeExercise = _auxType;
@@ -128,14 +138,17 @@ float dist;
     
     [locationManager stopUpdatingLocation];
     
-    // Grava os dados da sessão
-    currentSession.points = points;
+    
+    [currentSession setDate:[(CLLocation*)[points firstObject]timestamp]];
+    
     [currentSession calcDist];
     [currentSession calcTime];
 //    NSLog(@"Distancia: %f", [currentSession calcDist]);
 //    NSLog(@"Tempo: %f", [currentSession calcTime]);
     
     [dss addSession:currentSession];
+    
+    //[[CorePersistenceManager sharedInstance]saveContext];
     
     // Esvazia os objetos
     currentSession = nil;

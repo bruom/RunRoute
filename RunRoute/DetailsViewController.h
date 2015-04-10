@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Session.h"
+#import "RoutePoint.h"
 
 @interface DetailsViewController : UIViewController<MKMapViewDelegate, UIGestureRecognizerDelegate>
 
