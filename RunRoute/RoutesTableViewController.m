@@ -32,6 +32,7 @@ NSMutableArray *sessions;
         return [[(Session *)obj1 date] compare:[(Session *)obj2 date]];
     }];
     
+#warning fazer isso para toda vez que aparecer a view
     sessions = [[NSMutableArray alloc]initWithArray:sortedResults];
     
 }
@@ -146,7 +147,7 @@ NSMutableArray *sessions;
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"ShowDetails"]){
+    if([segue.identifier isEqualToString:@"detailsView"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailsViewController *appView = segue.destinationViewController;
         
@@ -169,6 +170,10 @@ NSMutableArray *sessions;
         self.editing = YES;
         _editButton.title = @"Ok";
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"detailsView" sender:nil];
 }
 
 @end
