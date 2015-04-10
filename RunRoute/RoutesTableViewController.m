@@ -25,7 +25,7 @@ NSMutableArray *sessions;
     NSArray *fetchResults = [[CorePersistenceManager sharedInstance]fetchDataForEntity:@"Session" usingPredicate:nil];
     
     //usamos um Singleton para guardar os dados - não há persistencia nesta versão
-    DataSourceSingleton *dss = [DataSourceSingleton instance];
+    //DataSourceSingleton *dss = [DataSourceSingleton instance];
     
     //sessions = dss.sessions;
     NSArray *sortedResults = [fetchResults sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -152,7 +152,7 @@ NSMutableArray *sessions;
         
         long row = [indexPath row];
 
-        DataSourceSingleton* dss = [DataSourceSingleton instance];
+        //DataSourceSingleton* dss = [DataSourceSingleton instance];
         appView.session = [sessions objectAtIndex:row];
     }
 }

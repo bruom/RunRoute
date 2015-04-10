@@ -29,7 +29,7 @@
         return [[(RoutePoint *)obj1 timestamp] compare:[(RoutePoint *)obj2 timestamp]];
     }];
     
-    float pit;
+    //float pit;
     if(nil==self.routePoints || self.routePoints.count == 0){
         return 0.0;
     }
@@ -60,7 +60,7 @@
     NSDate *end = [[pontosArray lastObject]timestamp];
     NSTimeInterval aux = [end timeIntervalSinceDate:start];
     
-#warning tem que arrumar isso pra virar time interval
+//#warning tem que arrumar isso pra virar time interval
     self.time = [NSNumber numberWithFloat:aux];
     return aux;
 }
