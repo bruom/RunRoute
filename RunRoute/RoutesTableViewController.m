@@ -22,19 +22,24 @@ NSMutableArray *sessions;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *fetchResults = [[CorePersistenceManager sharedInstance]fetchDataForEntity:@"Session" usingPredicate:nil];
+    
     
     //usamos um Singleton para guardar os dados - não há persistencia nesta versão
     //DataSourceSingleton *dss = [DataSourceSingleton instance];
     
     //sessions = dss.sessions;
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    NSArray *fetchResults = [[CorePersistenceManager sharedInstance]fetchDataForEntity:@"Session" usingPredicate:nil];
     NSArray *sortedResults = [fetchResults sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [[(Session *)obj1 date] compare:[(Session *)obj2 date]];
     }];
     
-#warning fazer isso para toda vez que aparecer a view
     sessions = [[NSMutableArray alloc]initWithArray:sortedResults];
-    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,8 +127,11 @@ NSMutableArray *sessions;
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Remove o objeto da classe sessions ao remover da tableview
+        [[[CorePersistenceManager sharedInstance] managedObjectContext] deleteObject:[sessions objectAtIndex:indexPath.row]];
         [sessions removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [[CorePersistenceManager sharedInstance] saveContext];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   

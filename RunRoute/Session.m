@@ -84,14 +84,14 @@
 }
 
 -(float)getMaxSpeed{
-#warning consertar isso
+
     //retorna os pontos do NSSet de forma ordenada por timestamp
     NSArray *pontosArray = [[self.routePoints allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [[(RoutePoint *)obj1 timestamp] compare:[(RoutePoint *)obj2 timestamp]];
     }];
     
     float aux = 0.0;
-    for(int i=0; i<points.count;i++){
+    for(int i=0; i<pontosArray.count;i++){
         if([[(RoutePoint*)[pontosArray objectAtIndex:i] speed]floatValue]>aux)
             aux = [[(RoutePoint*)[pontosArray objectAtIndex:i] speed]floatValue];
     }
