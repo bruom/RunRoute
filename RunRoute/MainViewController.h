@@ -28,6 +28,7 @@
 @property NSTimer *nsTimer;
 @property BOOL isSession;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *typeExercise;
+@property (weak, nonatomic) IBOutlet UIView *viewType;
 @property NSString* auxType;
 
 - (IBAction)startButton:(id)sender;

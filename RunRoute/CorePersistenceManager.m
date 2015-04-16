@@ -19,6 +19,7 @@ static id instance;
         instance = [[CorePersistenceManager alloc] init];
         
     });
+    
     return instance;
 }
 

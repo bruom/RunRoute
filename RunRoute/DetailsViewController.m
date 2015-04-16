@@ -120,7 +120,7 @@
         MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
         
         // É ESSE QUE DEFINE A COR
-        renderer.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:0.7];
+        renderer.strokeColor = [[UIColor colorWithRed:249.0/255.0 green:66.0/225.0 blue:7.0/255.0 alpha:1] colorWithAlphaComponent:0.7];
         renderer.lineWidth   = 5;
         
         return renderer;

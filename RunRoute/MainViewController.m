@@ -14,6 +14,9 @@
 @end
 
 @implementation MainViewController
+{
+    UIAlertView *alertView;
+}
 
 @synthesize map, points, locationManager, currentSession, lastLine, dss, isSession, nsTimer;
 
@@ -124,6 +127,7 @@ float dist;
     // Esconde o botão play e o tipo de exercício
     _startButtonOutlet.hidden = YES;
     _typeExercise.hidden = YES;
+    _viewType.hidden = YES;
     
     // Mostra o botão stop
     _stopButtonOutlet.hidden = NO;
@@ -133,39 +137,47 @@ float dist;
 }
 
 - (IBAction)stopButton:(id)sender {
-    
-    isSession = NO;
-    
-    [locationManager stopUpdatingLocation];
-    
-    
-    [currentSession setDate:[(CLLocation*)[points firstObject]timestamp]];
-    
-    [currentSession calcDist];
-    [currentSession calcTime];
-//    NSLog(@"Distancia: %f", [currentSession calcDist]);
-//    NSLog(@"Tempo: %f", [currentSession calcTime]);
-    
-    [dss addSession:currentSession];
-    
-    [[CorePersistenceManager sharedInstance]saveContext];
-    
-    // Esvazia os objetos
-    currentSession = nil;
-    
-    // Recria os pontos
-    points = [[NSMutableArray alloc] init];
-    
-    // Cria e exibe um alerta no final do exercício
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Exercício Concluído" message:@"Exercício salvo no seu histórico 😁"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [alert show];
-    
-    // Esconde o stop
-    _stopButtonOutlet.hidden = YES;
-    
-    // Mostra o play e tipo de exercício
-    _startButtonOutlet.hidden = NO;
-    _typeExercise.hidden = NO;
+    alertView = [[UIAlertView alloc] initWithTitle:@"Aviso" message:@"Deseja mesmo encerrar o exercício?"delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
+    [alertView show];
+}
+
+-(void) alertView: (UIAlertView *) alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        
+        isSession = NO;
+        
+        [locationManager stopUpdatingLocation];
+        
+        
+        [currentSession setDate:[(CLLocation*)[points firstObject]timestamp]];
+        
+        [currentSession calcDist];
+        [currentSession calcTime];
+        //    NSLog(@"Distancia: %f", [currentSession calcDist]);
+        //    NSLog(@"Tempo: %f", [currentSession calcTime]);
+        
+        [dss addSession:currentSession];
+        
+        [[CorePersistenceManager sharedInstance]saveContext];
+        
+        // Esvazia os objetos
+        currentSession = nil;
+        
+        // Recria os pontos
+        points = [[NSMutableArray alloc] init];
+        
+        // Cria e exibe um alerta no final do exercício
+        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"Exercício Concluído" message:@"Exercício salvo no seu histórico 😁"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertV show];
+        
+        // Esconde o stop
+        _stopButtonOutlet.hidden = YES;
+        
+        // Mostra o play e tipo de exercício
+        _startButtonOutlet.hidden = NO;
+        _typeExercise.hidden = NO;
+        _viewType.hidden = NO;
+    }
 }
 
 #pragma mark - PolyLine
@@ -202,7 +214,7 @@ float dist;
         MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
         
         // É ESSE QUE DEFINE A COR
-        renderer.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:0.7];
+        renderer.strokeColor = [[UIColor colorWithRed:249.0/255.0 green:66.0/225.0 blue:7.0/255.0 alpha:1] colorWithAlphaComponent:0.7];
         //largura da linha desenahda
         renderer.lineWidth   = 5;
         

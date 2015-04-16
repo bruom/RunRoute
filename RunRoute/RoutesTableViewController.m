@@ -108,7 +108,7 @@ NSMutableArray *sessions;
     if ([aux isEqualToString:@"Run"])
         cell.image.image =[UIImage imageNamed: @"runicon.png"];
     if([aux isEqualToString:@"Bike"])
-        cell.image.image =[UIImage imageNamed: @"bikeicon2.png"];
+        cell.image.image =[UIImage imageNamed: @"BIKEICONNN.png"];
 
     return cell;
 }
