@@ -21,6 +21,9 @@
     NSManagedObjectContext *context = [self managedObjectContext];
     CorePersistenceManager *cdm = [CorePersistenceManager sharedInstance];
     cdm.managedObjectContext = context;
+    
+    self.window.tintColor = [UIColor colorWithRed:249.0/255.0 green:66.0/225.0 blue:7.0/255.0 alpha:1];
+    
     return YES;
 }
 
