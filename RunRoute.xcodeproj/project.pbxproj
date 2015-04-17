@@ -65,10 +65,6 @@
 		151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTableViewCell.m; sourceTree = "<group>"; };
 		15998DC81AA6242100DE2DDA /* DataSourceSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceSingleton.h; sourceTree = "<group>"; };
 		15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceSingleton.m; sourceTree = "<group>"; };
-		15C353E31AD08E560002F27B /* GraficoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficoView.h; sourceTree = "<group>"; };
-		15C353E41AD08E560002F27B /* GraficoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraficoView.m; sourceTree = "<group>"; };
-		15C353E61AD093980002F27B /* GraficoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficoViewController.h; sourceTree = "<group>"; };
-		15C353E71AD093980002F27B /* GraficoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraficoViewController.m; sourceTree = "<group>"; };
 		15C353EE1AD592A40002F27B /* CorePersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorePersistenceManager.h; sourceTree = "<group>"; };
 		15C353EF1AD592A40002F27B /* CorePersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorePersistenceManager.m; sourceTree = "<group>"; };
 		6A8BE2D41AD469C5000E3070 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -149,10 +145,6 @@
 				6A8BE2D61AD469E1000E3070 /* coreDataModel.xcdatamodeld */,
 				6A8BE2E21AD46D54000E3070 /* RoutePoint.h */,
 				6A8BE2E31AD46D54000E3070 /* RoutePoint.m */,
-				15C353E31AD08E560002F27B /* GraficoView.h */,
-				15C353E41AD08E560002F27B /* GraficoView.m */,
-				15C353E61AD093980002F27B /* GraficoViewController.h */,
-				15C353E71AD093980002F27B /* GraficoViewController.m */,
 				15C353EE1AD592A40002F27B /* CorePersistenceManager.h */,
 				15C353EF1AD592A40002F27B /* CorePersistenceManager.m */,
 			);

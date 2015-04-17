@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1vH-IU-VEj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1vH-IU-VEj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -436,7 +436,6 @@
                         <segue destination="SnN-bb-bg5" kind="relationship" relationship="viewControllers" id="QTH-Px-OMQ"/>
                         <segue destination="v3i-qi-N0O" kind="relationship" relationship="viewControllers" id="PX7-R2-aTi"/>
                         <segue destination="2ay-Ug-N2P" kind="relationship" relationship="viewControllers" id="Cw7-e9-oXo"/>
-                        <segue destination="ZRr-6Z-jC5" kind="relationship" relationship="viewControllers" id="97S-Fe-Qsp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emf-Tn-z2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -762,45 +761,6 @@ Desenvolvido pelo TheBestGroup:
             </objects>
             <point key="canvasLocation" x="213" y="733.5"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="gOf-5u-69k">
-            <objects>
-                <viewController id="ZRr-6Z-jC5" customClass="GraficoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zyS-CQ-K53"/>
-                        <viewControllerLayoutGuide type="bottom" id="vo1-om-qQq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hJ0-Vr-fXe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqe-uY-KDL" customClass="GraficoView">
-                                <rect key="frame" x="0.0" y="28" width="600" height="398"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="vqe-uY-KDL" firstAttribute="leading" secondItem="hJ0-Vr-fXe" secondAttribute="leadingMargin" constant="-16" id="35R-Mm-Cj7"/>
-                            <constraint firstAttribute="centerX" secondItem="vqe-uY-KDL" secondAttribute="centerX" id="Hh3-ag-UcP"/>
-                            <constraint firstItem="vqe-uY-KDL" firstAttribute="top" secondItem="zyS-CQ-K53" secondAttribute="bottom" constant="8" id="Lql-B6-K9a"/>
-                            <constraint firstItem="vo1-om-qQq" firstAttribute="top" secondItem="vqe-uY-KDL" secondAttribute="bottom" constant="125" id="u6S-m7-V8K"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vqe-uY-KDL" secondAttribute="trailing" constant="-16" id="wz2-0H-viO"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="grafico-1x" id="RI3-sY-pIV">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="grafico-filled-1x"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
-                    <connections>
-                        <outlet property="graficoView" destination="vqe-uY-KDL" id="1ud-H1-PfC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ndk-UW-iYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-508.5" y="1391.25"/>
-        </scene>
         <!--Details View Controller-->
         <scene sceneID="Wry-6h-4fB">
             <objects>
@@ -830,7 +790,7 @@ Desenvolvido pelo TheBestGroup:
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNs-NH-Dc6">
                                         <rect key="frame" x="190" y="20" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -845,7 +805,7 @@ Desenvolvido pelo TheBestGroup:
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCV-wX-1Bi">
                                         <rect key="frame" x="190" y="61" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -860,7 +820,7 @@ Desenvolvido pelo TheBestGroup:
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIZ-mU-ijU">
                                         <rect key="frame" x="190" y="102" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -870,6 +830,7 @@ Desenvolvido pelo TheBestGroup:
                                             <constraint firstAttribute="width" constant="160" id="CwV-z4-eQC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Velocidade Máxima:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPM-84-gvz">
@@ -878,16 +839,19 @@ Desenvolvido pelo TheBestGroup:
                                             <constraint firstAttribute="width" constant="160" id="Rpn-3y-A0K"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOy-H4-H4x">
                                         <rect key="frame" x="190" y="184" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8O-Oh-wnv">
                                         <rect key="frame" x="190" y="143" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -895,7 +859,9 @@ Desenvolvido pelo TheBestGroup:
                                     <constraint firstItem="NPM-84-gvz" firstAttribute="leading" secondItem="D8e-QL-wJv" secondAttribute="leading" constant="10" id="0Vs-dV-OV5"/>
                                     <constraint firstItem="Dmb-9b-b9D" firstAttribute="top" secondItem="pol-bb-abs" secondAttribute="bottom" constant="20" id="0ZX-Tu-g1R"/>
                                     <constraint firstItem="ZCV-wX-1Bi" firstAttribute="leading" secondItem="D8e-QL-wJv" secondAttribute="leading" constant="190" id="4Ow-5R-nZ3"/>
-                                    <constraint firstAttribute="bottom" secondItem="NPM-84-gvz" secondAttribute="bottom" constant="-65" id="6Xq-9E-rPb"/>
+                                    <constraint firstAttribute="bottom" secondItem="NPM-84-gvz" secondAttribute="bottom" constant="-65" id="6Xq-9E-rPb">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="BNs-NH-Dc6" secondAttribute="trailing" constant="58" id="8ka-qM-hOO"/>
                                     <constraint firstItem="GFa-Ay-cCF" firstAttribute="top" secondItem="Dmb-9b-b9D" secondAttribute="bottom" constant="20" id="B0I-DM-mD5"/>
                                     <constraint firstItem="NPM-84-gvz" firstAttribute="top" secondItem="vlQ-dZ-dLr" secondAttribute="bottom" constant="20" id="FIA-kI-MGu"/>
@@ -934,10 +900,11 @@ Desenvolvido pelo TheBestGroup:
                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="494" y="70" width="290" height="276"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="16" y="596" width="368" height="140"/>
                                     <mask key="constraints">
                                         <include reference="6Xq-9E-rPb"/>
-                                        <include reference="MK0-cV-pQG"/>
+                                        <exclude reference="MK0-cV-pQG"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -1114,8 +1081,6 @@ Desenvolvido pelo TheBestGroup:
     <resources>
         <image name="exercise-32" width="32" height="32"/>
         <image name="exercise-filled-32" width="32" height="32"/>
-        <image name="grafico-1x" width="32" height="32"/>
-        <image name="grafico-filled-1x" width="32" height="32"/>
         <image name="iconLogo" width="1024" height="1024"/>
         <image name="info-32" width="32" height="32"/>
         <image name="info_filled-32" width="32" height="32"/>
