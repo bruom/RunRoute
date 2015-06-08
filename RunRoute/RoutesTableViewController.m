@@ -9,7 +9,7 @@
 #import "RoutesTableViewController.h"
 #import "DataSourceSingleton.h"
 #import "RouteTableViewCell.h"
-#import "DetailsViewController.h"
+#import "DetailsTableViewController.h"
 #import "CorePersistenceManager.h"
 
 @interface RoutesTableViewController ()
@@ -28,8 +28,7 @@ NSMutableArray *sessions;
     //DataSourceSingleton *dss = [DataSourceSingleton instance];
     
     //sessions = dss.sessions;
-    
-    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -58,16 +57,18 @@ NSMutableArray *sessions;
         //Se estiver vazia, exibe uma mensagem de lista vazia
 
         // Mensagem de tableview vazia
-        messageLabel.text = @"Sem Exercícios Registrados...";
+        messageLabel.text = @"Sem Exercícios Registrados";
         // Tipo de alinhamento da label, centralizado
         messageLabel.textAlignment = NSTextAlignmentCenter;
         // Tamanho do texto da label
-        messageLabel.font = [UIFont italicSystemFontOfSize:22];
+        messageLabel.font = [UIFont systemFontOfSize:22];
         // Cor da label
-        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.textColor = [UIColor grayColor];
 
         //Coloca a label no fundo da tableview
         self.tableView.backgroundView = messageLabel;
+        
+        _editButton.enabled = false;
         
         return 1;
     }
@@ -75,6 +76,7 @@ NSMutableArray *sessions;
         // Se não estiver vazia apaga a mensagem
         messageLabel.text = @"";
         self.tableView.backgroundView = messageLabel;
+        _editButton.enabled = true;
 
         return 1;
     }
@@ -136,7 +138,7 @@ NSMutableArray *sessions;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"detailsView"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        DetailsViewController *appView = segue.destinationViewController;
+        DetailsTableViewController *appView = segue.destinationViewController;
         
         long row = [indexPath row];
 

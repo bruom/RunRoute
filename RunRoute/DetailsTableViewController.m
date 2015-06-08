@@ -1,23 +1,24 @@
 //
-//  DetailsViewController.m
+//  DetailsTableViewController.m
 //  RunRoute
 //
-//  Created by TheBestGroup on 3/2/15.
-//  Copyright (c) 2015 TheBestGroup. All rights reserved.
+//  Created by João Marcos on 08/06/15.
+//  Copyright (c) 2015 Bruno Omella. All rights reserved.
 //
 
-#import "DetailsViewController.h"
+#import "DetailsTableViewController.h"
 
-@interface DetailsViewController ()
+@interface DetailsTableViewController ()
 
 @end
 
-@implementation DetailsViewController
+@implementation DetailsTableViewController
 
 @synthesize session, map;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [map setDelegate:self];
     
     NSMutableArray *coords = [[NSMutableArray alloc]init];
@@ -46,58 +47,29 @@
     //não foi possível implementar cálculo de altitude nesta versão
     //_slope.text = [[NSString alloc] initWithFormat:@"%.2f m", [session totalDownSlope]];
     
-    // Configura o scroll view
-    _scroll.scrollEnabled = YES;
-    _scroll.contentSize = CGSizeMake(300, 200);
-                             
     [self drawRoute:coords];
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[coords firstObject]coordinate], 250, 250);
     
     // Mudar a região atual para visualização de forma não-animada
     [map setRegion:region animated:NO ];
-    
-    
-    // Reconhecimento do gesto
-    UIScreenEdgePanGestureRecognizer *leftSwipe = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
-    leftSwipe.edges = UIRectEdgeLeft;
-    [self.view addGestureRecognizer:leftSwipe];
-    
-    // Muda o tipo da transição de telas
-    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)voltarButton:(id)sender {
-    // Volta pra tela anterior
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)leftSwipe{
-    // Volta pra tela anterior
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+//- (IBAction)voltarButton:(id)sender {
+//    // Volta pra tela anterior
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
 #pragma mark - PolyLine
 
 -(void)drawRoute:(NSArray*)points{
     
     // Mesmo metodo do main view para desenhar a rota no mapa, desenha a partir da lista de pontos no objeto Session
-
+    
     CLLocationCoordinate2D coords[points.count];
     for(int i=0; i< points.count; i++){
         CLLocation *local = [points objectAtIndex:i];
@@ -111,7 +83,7 @@
 
 #pragma mark - MKMapViewDelegate
 
-    //mesmo renderer pro overlay do mapa, igual ao usado no main view
+//mesmo renderer pro overlay do mapa, igual ao usado no main view
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
 {
@@ -127,5 +99,4 @@
     }
     return nil;
 }
-
 @end

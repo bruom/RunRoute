@@ -17,11 +17,11 @@
 		151A077C1AA4CAC3007E66CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151A077B1AA4CAC3007E66CD /* MapKit.framework */; };
 		151A077F1AA4CC05007E66CD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A077E1AA4CC05007E66CD /* MainViewController.m */; };
 		151A07821AA4CC2F007E66CD /* RoutesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07811AA4CC2F007E66CD /* RoutesTableViewController.m */; };
-		151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07841AA4CC4D007E66CD /* DetailsViewController.m */; };
 		151A07881AA4CC5F007E66CD /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A07871AA4CC5F007E66CD /* AboutViewController.m */; };
 		151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A078A1AA4CE7A007E66CD /* RouteTableViewCell.m */; };
 		15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */; };
 		15C353F01AD592A40002F27B /* CorePersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C353EF1AD592A40002F27B /* CorePersistenceManager.m */; };
+		17326CF11B25534A00E707DB /* DetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17326CF01B25534A00E707DB /* DetailsTableViewController.m */; };
 		6A8BE2D51AD469C5000E3070 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8BE2D41AD469C5000E3070 /* CoreData.framework */; };
 		6A8BE2D81AD469E1000E3070 /* coreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BE2D61AD469E1000E3070 /* coreDataModel.xcdatamodeld */; };
 		6A8BE2DE1AD46C6C000E3070 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BE2DD1AD46C6C000E3070 /* Session.m */; };
@@ -57,8 +57,6 @@
 		151A077E1AA4CC05007E66CD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		151A07801AA4CC2F007E66CD /* RoutesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutesTableViewController.h; sourceTree = "<group>"; };
 		151A07811AA4CC2F007E66CD /* RoutesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutesTableViewController.m; sourceTree = "<group>"; };
-		151A07831AA4CC4D007E66CD /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
-		151A07841AA4CC4D007E66CD /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		151A07861AA4CC5F007E66CD /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		151A07871AA4CC5F007E66CD /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		151A07891AA4CE7A007E66CD /* RouteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteTableViewCell.h; sourceTree = "<group>"; };
@@ -67,6 +65,8 @@
 		15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceSingleton.m; sourceTree = "<group>"; };
 		15C353EE1AD592A40002F27B /* CorePersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorePersistenceManager.h; sourceTree = "<group>"; };
 		15C353EF1AD592A40002F27B /* CorePersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorePersistenceManager.m; sourceTree = "<group>"; };
+		17326CEF1B25534A00E707DB /* DetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsTableViewController.h; sourceTree = "<group>"; };
+		17326CF01B25534A00E707DB /* DetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsTableViewController.m; sourceTree = "<group>"; };
 		6A8BE2D41AD469C5000E3070 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6A8BE2D71AD469E1000E3070 /* coreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		6A8BE2DC1AD46C6C000E3070 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 				151A07871AA4CC5F007E66CD /* AboutViewController.m */,
 				15998DC81AA6242100DE2DDA /* DataSourceSingleton.h */,
 				15998DC91AA6242100DE2DDA /* DataSourceSingleton.m */,
-				151A07831AA4CC4D007E66CD /* DetailsViewController.h */,
-				151A07841AA4CC4D007E66CD /* DetailsViewController.m */,
+				17326CEF1B25534A00E707DB /* DetailsTableViewController.h */,
+				17326CF01B25534A00E707DB /* DetailsTableViewController.m */,
 				151A077D1AA4CC05007E66CD /* MainViewController.h */,
 				151A077E1AA4CC05007E66CD /* MainViewController.m */,
 				151A07891AA4CE7A007E66CD /* RouteTableViewCell.h */,
@@ -286,9 +286,9 @@
 				15C353F01AD592A40002F27B /* CorePersistenceManager.m in Sources */,
 				151A07591AA4CAAE007E66CD /* AppDelegate.m in Sources */,
 				15998DCA1AA6242100DE2DDA /* DataSourceSingleton.m in Sources */,
-				151A07851AA4CC4D007E66CD /* DetailsViewController.m in Sources */,
 				151A078B1AA4CE7A007E66CD /* RouteTableViewCell.m in Sources */,
 				6A8BE2DE1AD46C6C000E3070 /* Session.m in Sources */,
+				17326CF11B25534A00E707DB /* DetailsTableViewController.m in Sources */,
 				151A077F1AA4CC05007E66CD /* MainViewController.m in Sources */,
 				151A07561AA4CAAE007E66CD /* main.m in Sources */,
 				151A07821AA4CC2F007E66CD /* RoutesTableViewController.m in Sources */,
