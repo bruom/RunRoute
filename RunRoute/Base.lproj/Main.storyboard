@@ -62,6 +62,7 @@
                                         <rect key="frame" x="88" y="36" width="153" height="31"/>
                                         <color key="backgroundColor" red="0.95203993060000003" green="0.95203993060000003" blue="0.95203993060000003" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="113" id="1Bs-Gu-0CW"/>
                                             <constraint firstAttribute="height" constant="31" id="KSZ-xJ-5Md"/>
                                             <constraint firstAttribute="width" constant="200" id="LlH-FF-PeY"/>
                                         </constraints>
@@ -71,14 +72,16 @@
                                         <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="1Bs-Gu-0CW"/>
                                                 <exclude reference="KSZ-xJ-5Md"/>
                                                 <exclude reference="LlH-FF-PeY"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
+                                                <exclude reference="1Bs-Gu-0CW"/>
                                                 <include reference="KSZ-xJ-5Md"/>
-                                                <include reference="LlH-FF-PeY"/>
+                                                <exclude reference="LlH-FF-PeY"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -86,6 +89,9 @@
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.36503855859778117" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="6Nl-nt-whO" secondAttribute="centerX" constant="102" id="FdV-ad-mG2"/>
+                                    <constraint firstItem="6Nl-nt-whO" firstAttribute="leading" secondItem="XKR-yW-Jo7" secondAttribute="leading" constant="57" id="Mcx-if-jEe">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                     <constraint firstAttribute="centerX" secondItem="NaJ-gy-ioK" secondAttribute="centerX" constant="-106" id="fTD-aw-tT5"/>
                                     <constraint firstAttribute="centerY" secondItem="NaJ-gy-ioK" secondAttribute="centerY" id="skv-4f-NRx"/>
                                     <constraint firstAttribute="centerY" secondItem="6Nl-nt-whO" secondAttribute="centerY" id="vFE-1f-z4N"/>
@@ -105,10 +111,17 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="FdV-ad-mG2"/>
+                                        <exclude reference="Mcx-if-jEe"/>
                                         <exclude reference="vFE-1f-z4N"/>
                                         <exclude reference="fTD-aw-tT5"/>
                                         <exclude reference="skv-4f-NRx"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="34" y="98" width="94" height="92"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
@@ -117,6 +130,7 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="FdV-ad-mG2"/>
+                                        <exclude reference="Mcx-if-jEe"/>
                                         <include reference="vFE-1f-z4N"/>
                                         <include reference="fTD-aw-tT5"/>
                                         <include reference="skv-4f-NRx"/>
@@ -414,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWl-le-qc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2210" y="1797"/>
+            <point key="canvasLocation" x="-2211" y="1797"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KCB-qz-Yag">
@@ -619,7 +633,7 @@ Desenvolvido pelo TheBestGroup:
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVp-bA-Ho8">
-                                            <rect key="frame" x="128" y="18" width="120" height="20"/>
+                                            <rect key="frame" x="128" y="18" width="120" height="14.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="gZu-qb-5bm">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="90"/>
@@ -629,7 +643,7 @@ Desenvolvido pelo TheBestGroup:
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tempo Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yu-JR-3AL">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tempo Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yu-JR-3AL">
                                             <rect key="frame" x="128" y="68" width="120" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="3Od-AU-8zr">
@@ -640,7 +654,7 @@ Desenvolvido pelo TheBestGroup:
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distancia Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3N-Yl-t1H">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Distancia Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3N-Yl-t1H">
                                             <rect key="frame" x="128" y="43" width="120" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="Hkh-va-zdp">
@@ -651,7 +665,7 @@ Desenvolvido pelo TheBestGroup:
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cA-O2-MDX">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cA-O2-MDX">
                                             <rect key="frame" x="258" y="18" width="301" height="20"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -667,7 +681,7 @@ Desenvolvido pelo TheBestGroup:
                                                 <constraint firstAttribute="width" constant="80" id="hw6-JS-65i"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-si-gHd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-si-gHd">
                                             <rect key="frame" x="258" y="43" width="301" height="20"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -679,7 +693,7 @@ Desenvolvido pelo TheBestGroup:
                                                 <rect key="frame" x="206" y="42" width="153" height="19.5"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-AC-Ync">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-AC-Ync">
                                             <rect key="frame" x="258" y="68" width="301" height="20"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
